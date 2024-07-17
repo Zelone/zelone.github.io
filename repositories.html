@@ -63,42 +63,58 @@
 
     <div class="container">
         <div class="container">
-            <div class="container row">
+            <div class="container row" id="card-repo">
+                <code>
+                <div id="card-datas" style=" display: none"></div>
+            </code>
+                <script>
+                    $.getJSON('https://api.github.com/users/zelone/repos', function (data) {
+                        $('#card-datas').append(JSON.stringify(data))
+                        var fork_count = 0;
+                        for (i in data) {
+                            if (data[i].fork) { fork_count++; continue; }
+                            var space = `<div class=" col-sm-2"></div>`
 
-                <div class="card col-sm-5">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-                </div>
+                            var scard = document.createElement('div')
+                            scard.innerHTML = space
+                            var cdata = `<div class="card col-sm-5">
+                                            <div class="card-body" >
+                                                <h5 class="card-title"><a href="${data[i].html_url}">${data[i].name}</a></h5>
+                                                <h6 class="card-subtitle">${data[i].language != null ? `Language : <span class='lang'>${data[i].language}</span>` : ``}
+                                                    ${data[i].size != null ? `Size : <span class='ssize'>${data[i].size}</span>` : ``}</h6>
+                                                <p class="card-text">${data[i].description != null ? `${data[i].description}<br>` : `No Description provided yet`}
+                                                    </p>
+                                                    <pre style="display:none"><code>${JSON.stringify(data[i]).replaceAll(',', ',\n')}</code></pre>
+                                            </div>
+                                        `
+                            //${data[i].topics}
+                            if (data[i].topics.length > 0) {
+                                cdata = cdata + `
+                                            <ul class="list-group list-group-flush">`
+                                for (j in data[i].topics) {
+                                    cdata = cdata + `<li class="list-group-item">${data[i].topics[j]}</li>`
+                                }
+                                cdata = cdata + `</ul>`
+                            }
 
-                <div class=" col-sm-2"></div>
-                <div class="card col-sm-5">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
+                            cdata = cdata + `
+                                            <div class="card-body">
+                                            ${data[i].has_pages ? `<a href="/${data[i].name != 'zelone.github.io' ? data[i].name : `\\`}" class="card-link">Github Pages</a>` : ``}
+
                         <a href="#" class="card-link">Another link</a>
-                    </div>
-                </div>
+                                            </div >
+                                        </div >`
+                            var card = document.createElement('div')
+                            card.innerHTML = cdata
+                            if ((i - fork_count) % 2 == 1) {
+                                document.getElementById('card-repo').append(scard.firstChild)
+                            }
+                            document.getElementById('card-repo').append(card.firstChild)
+                        }
+                    })
+                    //var data = JSON.parse(document.getElementById('card-datas').innerText)
+
+                </script>
             </div>
         </div>
     </div>
