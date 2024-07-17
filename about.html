@@ -37,6 +37,75 @@
     <script src="reloadscript.js"></script>
     <div id="nav-placeholder">
 
+        
+    
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Zelone</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                
+                <li class="nav-item active">
+                    <a class="nav-link" href="repositories.html">Repositories <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Fast Links</a>
+                </li>
+                <li class="nav-item" id="nav-about">
+                    <a class="nav-link"  href="about.html">About me</a>
+                </li>
+                <!--li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Fast Links
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li-->
+            </ul>
+            <script>
+                console.log(window.location.pathname)
+                var srnode = document.createElement('span')
+                srnode.classList.add('sr-only')
+                srnode.innerText = '(current)'
+
+                var navs = document.getElementsByClassName('nav-item')
+                for (var i = 0; i < navs.length; ++i) {
+                    if (navs.item(i).classList.contains('active')) {
+                        navs.item(i).classList.remove('active')
+                        navs.item(i).childNodes[1].removeChild(navs.item(i).childNodes[1].childNodes[1])
+                    }
+                }
+                if (window.location.pathname.endsWith('about.html')) {
+                    console.log('ABOUT')
+                    var nav = document.getElementById('nav-about')
+                    nav.classList.add('active')
+                    nav.childNodes[1].appendChild(srnode)
+                } else if (window.location.pathname.endsWith('/')) {
+                    nav = document.getElementById('nav-about')
+                }
+            </script>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+
+
     </div>
 
     <script>
