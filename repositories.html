@@ -63,62 +63,91 @@
 
 
     <div class="container">
-        <div class="container">
-            <div class="container row" id="card-repo">
-                <code>
-                <div id="card-datas" style=" display: none"></div>
-            </code>
-                <script>
-                    $.getJSON('https://api.github.com/users/zelone/repos', function (data) {
-                        $('#card-datas').append(JSON.stringify(data))
-                        var fork_count = 0;
-                        for (i in data) {
-                            if (data[i].fork) { fork_count++; continue; }
-                            var space = `<div class=" col-sm-2"></div>`
+        <div class="container row">
+            <div class="container row col-sm-12 col-md-5 card-column" id="card-repo">
 
-                            var scard = document.createElement('div')
-                            scard.innerHTML = space
-                            var cdata = `<div class="card col-sm-5">
-                                            <div class="card-body" >
-                                                <h5 class="card-title"><a href="${data[i].html_url}">${data[i].name}</a></h5>
-                                                <h6 class="card-subtitle">${data[i].language != null ? `Language : <span class='lang'>${data[i].language}</span>` : ``}
-                                                    ${data[i].size != null ? `Size : <span class='ssize'>${data[i].size}</span>` : ``}</h6>
-                                                <p class="card-text">${data[i].description != null ? `${data[i].description}<br>` : `No Description provided yet`}
-                                                    </p>
-                                                    <pre style="display:none"><code>${JSON.stringify(data[i]).replaceAll(',', ',\n')}</code></pre>
-                                            </div>
-                                        `
-                            //${data[i].topics}
-                            if (data[i].topics.length > 0) {
-                                cdata = cdata + `<hr class="my-4">`
-                                for (j in data[i].topics) {
-                                    cdata = cdata + `<span class="badge badge-secondary">${data[i].topics[j]}</span>`
-                                }
-                                cdata = cdata + `<hr class="my-4">`
-                            }
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="container row col-sm-12 col-md-5 card-column" id="card-repo2">
 
-                            cdata = cdata + `
-                                            <div class="card-body">
-                                            ${data[i].has_pages ? `<a href="/${data[i].name != 'zelone.github.io' ? data[i].name : ``}" class="card-link">Github Pages</a>` : ``}
-
-                        <a href="#" class="card-link">Another link</a>
-                                            </div >
-                                        </div >`
-                            var card = document.createElement('div')
-                            card.innerHTML = cdata
-                            if ((i - fork_count) % 2 == 1) {
-                                document.getElementById('card-repo').append(scard.firstChild)
-                            }
-                            document.getElementById('card-repo').append(card.firstChild)
-                        }
-                    })
-                    //var data = JSON.parse(document.getElementById('card-datas').innerText)
-
-                </script>
             </div>
         </div>
     </div>
+    <code>
+        <div id="card-datas" style=" display: none"></div>
+    </code>
+    <script>
+        $.getJSON('https://api.github.com/users/zelone/repos', function (data) {
+            $('#card-datas').append(JSON.stringify(data))
+            var fork_count = 0;
+            var i= data.length;
+            var first = 2;
+            while (i>0) {
+                i=i-1;
+                if (data[i].fork) { fork_count++; continue; }
+                var space = `<div class="  col-12"><div><br/></div></div>`
 
+                var scard1 = document.createElement('div')
+                scard1.innerHTML = space
+                // space = `<div class=" col-sm-12 col-md-12"></div>`
+
+                // var scard2 = document.createElement('div')
+                // scard2.innerHTML = space
+
+                var cdata = `<div class="card col-12">
+                                    <div class="card-body" >
+                                        <h5 class="card-title"><a href="${data[i].html_url}">${data[i].name}</a></h5>
+                                        <h6 class="card-subtitle">${data[i].language != null ? `Language : <span class='lang'>${data[i].language}</span>` : ``}
+                                            ${data[i].size != null ? `Size : <span class='ssize'>${data[i].size}</span>` : ``}</h6>
+                                        <hr class="my-4">
+                                        <p class="card-text">${data[i].description != null ? `${data[i].description}<br>` : `No Description provided yet`}
+                                            <div class='div-lastcommit' repo="${data[i].name}"></div>
+                                            </p>
+                                            <pre style="display:none"><code>${JSON.stringify(data[i]).replaceAll(',', ',\n')}</code></pre>
+                                    </div>
+                                `
+                //${data[i].topics}
+                if (data[i].topics.length > 0) {
+                    cdata = cdata + `<hr class="my-4"><div class="card-body row">`
+                    for (j in data[i].topics) {
+                        cdata = cdata + `<span class="badge badge-secondary">${data[i].topics[j]}</span> &nbsp;`
+                    }
+                    cdata = cdata + `</div><hr class="my-4">`
+                }
+
+                cdata = cdata + `
+                                    <div class="card-body">
+                                    ${data[i].has_pages ? `<a href="/${data[i].name != 'zelone.github.io' ? data[i].name : ``}" class="card-link">Github Pages</a>` : ``}
+
+                <!--a href="#" class="card-link">Another link</a-->
+                                    </div >
+                                </div>`
+                var card = document.createElement('div')
+                card.innerHTML = cdata
+                var is_odd=(i - fork_count) % 2 == 1;
+                var element_id = is_odd?'card-repo':'card-repo2';
+                 if (first<=0) {
+                    document.getElementById(element_id).append(scard1.firstChild)
+                 }
+                 first= first-1;
+                 // else {
+                    //document.getElementById(element_id).append(scard2.firstChild)
+                // }
+                document.getElementById(element_id).append(card.firstChild)
+            }
+        });
+        //# Todo:  The system below is not working to check the latest commit name and date time for displaying near each repository
+        setTimeout(() => {
+            var nodes = document.getElementsByClassName('div-lastcommit')
+            for (i in nodes) {
+                $.getJSON(`https://api.github.com/repos/zelone/${nodes[i].attributes.repo.value}/commits?per_page=1`, function (data) {
+                    nodes[i].innerText = JSON.stringify(data)
+                })
+            }
+        }, 1000);
+        //var data = JSON.parse(document.getElementById('card-datas').innerText)
+
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
