@@ -96,7 +96,9 @@
 
                 var cdata = `<div class="card col-12">
                                     <div class="card-body" >
-                                        <h5 class="card-title"><a href="${data[i].html_url}">${data[i].name}</a></h5>
+                                        <h5 class="card-title">
+                                            ${data[i].has_pages ?`<a href="/${data[i].name != 'zelone.github.io' ? data[i].name : ``}">${data[i].name}</a>`   
+                                                                : `${data[i].name}`}</h5>
                                         <h6 class="card-subtitle">${data[i].language != null ? `Language : <span class='lang'>${data[i].language}</span>` : ``}
                                             ${data[i].size != null ? `Size : <span class='ssize'>${data[i].size}</span>` : ``}</h6>
                                         <hr class="my-4">
@@ -117,7 +119,7 @@
 
                 cdata = cdata + `
                                     <div class="card-body">
-                                    ${data[i].has_pages ? `<a href="/${data[i].name != 'zelone.github.io' ? data[i].name : ``}" class="card-link">Github Pages</a>` : ``}
+                                    <a href="${data[i].html_url}" class="card-link">Github Repository Page</a>
 
                 <!--a href="#" class="card-link">Another link</a-->
                                     </div >
