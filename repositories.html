@@ -41,7 +41,7 @@
     </div>
 
     <script>
-        $("#nav-placeholder").load("nav.html");
+        $("#nav-placeholder").load("/nav.html");
     </script>
     <div class="container">
         <div class="container">
@@ -90,12 +90,11 @@
                                         `
                             //${data[i].topics}
                             if (data[i].topics.length > 0) {
-                                cdata = cdata + `
-                                            <ul class="list-group list-group-flush">`
+                                cdata = cdata + `<hr class="my-4">`
                                 for (j in data[i].topics) {
-                                    cdata = cdata + `<li class="list-group-item">${data[i].topics[j]}</li>`
+                                    cdata = cdata + `<span class="badge badge-secondary">${data[i].topics[j]}</span>`
                                 }
-                                cdata = cdata + `</ul>`
+                                cdata = cdata + `<hr class="my-4">`
                             }
 
                             cdata = cdata + `
