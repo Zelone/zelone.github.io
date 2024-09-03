@@ -86,7 +86,7 @@
                 i=i-1;
                 if (data[i].fork) { fork_count++; continue; }
                  
-                data[i].description=data[i].description.replace(/https:\/\/(www.?)?((?:youtu.be)?(?:youtube.com)?)\/([0-9A-Za-z./?=&_])*/g, '<a href="$1">$1</a>')
+                //data[i].description=data[i].description.replace(/https:\/\/(www.?)?((?:youtu.be)?(?:youtube.com)?)\/([0-9A-Za-z./?=&_])*/g, function(data){return '<a href="$1">$1</a>' })
                 var space = `<div class="col-12"><div><br/></div></div>`
 
                 var scard1 = document.createElement('div')
