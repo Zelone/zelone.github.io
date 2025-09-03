@@ -60,8 +60,8 @@ Portfolio Website System
 ### **Page Loading System:**
 ```javascript
 $(document).ready(function() {
-    $("#nav-placeholder").load("nav.html");
-    $("#footer-placeholder").load("footer.html"); // or footer-template.html
+    $("#nav-placeholder").load("/nav.html");
+    $("#footer-placeholder").load("/footer.html"); // or footer-template.html
 });
 ```
 
@@ -158,7 +158,7 @@ E:\Profile\git-website\gitpages/
 
 <script>
 $(document).ready(function() {
-    $("#nav-placeholder").load("nav.html");
+    $("#nav-placeholder").load("/nav.html");
 });
 </script>
 ```

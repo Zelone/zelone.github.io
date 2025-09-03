@@ -728,8 +728,7 @@ function trackDemo() {
 **Solutions**:
 ```javascript
 // Check if nav.html path is correct
-$("#nav-placeholder").load("nav.html"); // ✅ Correct (relative)
-$("#nav-placeholder").load("/nav.html"); // ❌ May fail locally
+$("#nav-placeholder").load("/nav.html"); 
 
 // Verify jQuery is loaded
 if (typeof jQuery === 'undefined') {
@@ -738,7 +737,7 @@ if (typeof jQuery === 'undefined') {
 
 // Check for JavaScript errors
 console.log('Navigation loading...');
-$("#nav-placeholder").load("nav.html", function(response, status, xhr) {
+$("#nav-placeholder").load("/nav.html", function(response, status, xhr) {
     if (status == "error") {
         console.error('Navigation failed to load:', xhr.status, xhr.statusText);
     }
