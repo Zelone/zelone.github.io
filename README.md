@@ -41,14 +41,34 @@ A modern, responsive portfolio website showcasing projects and repositories.
 
 ```
 gitpages/
-├── index.html          # Homepage with welcome section
-├── about.html          # About page with personal information
-├── repositories.html   # Projects page with search functionality
-├── styles.css          # Comprehensive stylesheet
-├── script.js           # Modern JavaScript functionality
-├── nav.html           # Shared navigation component (legacy)
-├── .gitignore         # Git ignore rules
-└── README.md          # This documentation
+├── 📄 Main Pages
+│   ├── index.html              # Homepage with welcome section
+│   ├── about.html              # About page with personal information
+│   ├── repositories.html       # Projects page with search functionality
+│   └── absolute.html           # Task Manager application demo
+│
+├── 🧩 Centralized Components
+│   ├── nav.html               # Navigation with dynamic repositories dropdown
+│   ├── footer.html            # Main site footer
+│   └── footer-template.html   # Template footer with placeholders
+│
+├── 📋 Template System
+│   ├── template-index.html     # Project homepage template
+│   ├── template-repositories.html  # Documentation template
+│   └── template-about.html     # Project story template
+│
+├── 🎨 Assets
+│   ├── styles.css             # Comprehensive modern stylesheet
+│   └── script.js              # Core JavaScript functionality
+│
+├── 📚 Documentation
+│   ├── DOCUMENTATION.md       # Complete system documentation
+│   ├── TEMPLATE_USAGE.md      # Template usage and customization guide
+│   └── README.md              # This project overview
+│
+└── 🔧 Configuration
+    ├── .gitignore            # Git ignore rules
+    └── (other config files)
 ```
 
 ## 🚀 Features by Page
@@ -122,6 +142,26 @@ gitpages/
 - Safari 14+
 - Edge 90+
 - Mobile browsers with modern JavaScript support
+
+## 📚 Documentation
+
+For detailed information about using and maintaining this system:
+
+### **[DOCUMENTATION.md](DOCUMENTATION.md)** - Complete System Guide
+- System architecture and components
+- Centralized navigation and footer systems
+- File structure and organization
+- Features and improvements
+- Troubleshooting and maintenance
+- Technical specifications
+
+### **[TEMPLATE_USAGE.md](TEMPLATE_USAGE.md)** - Template System Guide
+- How to use the three template types
+- Step-by-step project modernization
+- Placeholder replacement system
+- Customization and styling
+- Best practices and examples
+- Advanced features and troubleshooting
 
 ## 🔮 Future Enhancements
 

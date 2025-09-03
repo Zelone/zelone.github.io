@@ -1,166 +1,89 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Zelone</title>
-    <meta name="description" content="">
+    <title>Projects & Repositories - Jitesh Jhawar | Zelone Portfolio</title>
+    <meta name="description" content="Explore Jitesh Jhawar's GitHub repositories and projects. Discover open source contributions, web applications, and development tools.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <meta name="author" content="Jitesh Jhawar">
+    <meta name="keywords" content="projects, repositories, GitHub, open source, web development, programming">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <style>
-        #wip {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-            font-size: 40px;
-            line-height: 1.5;
-            color: red;
-            border: 10px;
-        }
-    </style>
+    <!-- Navigation Placeholder -->
+    <div id="nav-placeholder"></div>
 
-    <script>
-
-
-    </script>
-    <script src="reloadscript.js"></script>
-    <div id="nav-placeholder">
-
-        
-    </div>
-
-    <script>
-        $("#nav-placeholder").load("/nav.html");
-    </script>
-    <div class="container">
+    <!-- Main Content -->
+    <main class="main-content">
         <div class="container">
-            <div class="container shadow">
-                <p>
-                    Welcome to my creations
-                </p>
-
-            </div>
+            <section class="content-section welcome-section">
+                <h1>My Projects & Repositories</h1>
+                <p>Explore my open source contributions and development projects</p>
+            </section>
+            
+            <!-- Search Section -->
+            <section class="search-container">
+                <form class="search-form" role="search">
+                    <input type="search" 
+                           id="searchInput" 
+                           class="search-input" 
+                           placeholder="Search repositories by name, language, or topic..." 
+                           aria-label="Search repositories">
+                    <button type="submit" id="searchBtn" class="search-btn">
+                        🔍 Search
+                    </button>
+                    <button type="button" id="clearSearch" class="btn btn-outline-secondary ml-2">
+                        Clear
+                    </button>
+                </form>
+                <div id="searchResults" class="search-results"></div>
+            </section>
         </div>
-    </div>
 
 
-    <div class="container">
+        <!-- Repository Grid -->
         <div class="container">
-        </div>
-    </div>
-
-
-    <div class="container">
-        <div class="container row">
-            <div class="container row col-sm-12 col-md-5 card-column" id="card-repo">
-
-            </div>
-            <div class="col-sm-2"></div>
-            <div class="container row col-sm-12 col-md-5 card-column" id="card-repo2">
-
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="card-repo1"></div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="card-repo2"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <code>
-        <div id="card-datas" style=" display: none"></div>
-    </code>
-    <script>
-        $.getJSON('https://api.github.com/users/zelone/repos', function (data) {
-            $('#card-datas').append(JSON.stringify(data))
-            var fork_count = 0;
-            var i= data.length;
-            var first = 2;
-            while (i>0) {
-                i=i-1;
-                if (data[i].fork) { fork_count++; continue; }
-                 if(data[i].description != null){
-                    data[i].description=data[i].description.replace(/https:\/\/(www.?)?((?:youtu.be)?(?:youtube.com)?)\/([0-9A-Za-z./?=&_])*/g, function(data){return '<a href="' + data + '">' + data + '</a>' })
-                 }
-                var space = `<div class="col-12"><div><br/></div></div>`
-
-                var scard1 = document.createElement('div')
-                scard1.innerHTML = space
-                // space = `<div class=" col-sm-12 col-md-12"></div>`
-
-                // var scard2 = document.createElement('div')
-                // scard2.innerHTML = space
-
-                var cdata = `<div class="card col-12">
-                                    <div class="card-body" >
-                                        <h5 class="card-title">
-                                            ${data[i].has_pages ?`<a href="/${data[i].name != 'zelone.github.io' ? data[i].name : ``}">${data[i].name}</a>`   
-                                                                : `${data[i].name}`}</h5>
-                                        <h6 class="card-subtitle">${data[i].language != null ? `Language : <span class='lang'>${data[i].language}</span>` : ``}
-                                            ${data[i].size != null ? `Size : <span class='ssize'>${data[i].size}</span>` : ``}</h6>
-                                        <hr class="my-4">
-                                        <p class="card-text">${data[i].description != null ? `${data[i].description}<br>` : `No Description provided yet`}
-                                            <div class='div-lastcommit' repo="${data[i].name}"></div>
-                                            </p>
-                                            <pre style="display:none"><code>${JSON.stringify(data[i]).replaceAll(',', ',\n')}</code></pre>
-                                    </div>
-                                `
-                //${data[i].topics}
-                if (data[i].topics.length > 0) {
-                    cdata = cdata + `<hr class="my-4"><div class="card-body row">`
-                    for (j in data[i].topics) {
-                        cdata = cdata + `<span class="badge badge-secondary">${data[i].topics[j]}</span> &nbsp;`
-                    }
-                    cdata = cdata + `</div><hr class="my-4">`
-                }
-
-                cdata = cdata + `
-                                    <div class="card-body">
-                                    <a href="${data[i].html_url}" class="card-link">Github Repository Page</a>
-
-                <!--a href="#" class="card-link">Another link</a-->
-                                    </div >
-                                </div>`
-                var card = document.createElement('div')
-                card.innerHTML = cdata
-                var is_odd=(i - fork_count) % 2 == 1;
-                var element_id = is_odd?'card-repo':'card-repo2';
-                 if (first<=0) {
-                    document.getElementById(element_id).append(scard1.firstChild)
-                 }
-                 first= first-1;
-                 // else {
-                    //document.getElementById(element_id).append(scard2.firstChild)
-                // }
-                document.getElementById(element_id).append(card.firstChild)
-            }
-        });
-        //# Todo:  The system below is not working to check the latest commit name and date time for displaying near each repository
-        setTimeout(() => {
-            var nodes = document.getElementsByClassName('div-lastcommit')
-            for (i in nodes) {
-                $.getJSON(`https://api.github.com/repos/zelone/${nodes[i].attributes.repo.value}/commits?per_page=1`, function (data) {
-                    nodes[i].innerText = JSON.stringify(data)
-                })
-            }
-        }, 1000);
-        //var data = JSON.parse(document.getElementById('card-datas').innerText)
-
-    </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    </main>
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
         crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    
+    <!-- Load Navigation and Footer -->
+    <script>
+        $(document).ready(function() {
+            $("#nav-placeholder").load("nav.html");
+            $("#footer-placeholder").load("footer.html");
+        });
+    </script>
 
 </body>
 

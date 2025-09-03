@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About [PROJECT_NAME] - Jitesh Jhawar | Zelone Portfolio</title>
+    <meta name="description" content="Learn about [PROJECT_NAME] - [PROJECT_DESCRIPTION]. Discover the story behind this project.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jitesh Jhawar">
+    <meta name="keywords" content="[PROJECT_KEYWORDS], about, story, development, project history">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>ℹ️</text></svg>">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Page-specific styles -->
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #fd7e14 0%, #e83e8c 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .about-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        
+        .about-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+        
+        .story-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #007bff;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.75rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: #007bff;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #007bff;
+        }
+        
+        .timeline-date {
+            color: #007bff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-badge {
+            background: #f8f9fa;
+            color: #495057;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-badge:hover {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #007bff 0%, #6f42c1 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Placeholder -->
+    <div id="nav-placeholder"></div>
+    
+    <!-- About Hero -->
+    <div class="container">
+        <section class="about-hero">
+            <h1>About [PROJECT_NAME]</h1>
+            <p>Discover the story behind this project</p>
+        </section>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Project Story -->
+        <section class="story-section">
+            <h2>📖 The Story</h2>
+            <p class="lead">[PROJECT_STORY_INTRO]</p>
+            <p>[PROJECT_STORY_DETAILS]</p>
+            
+            <h3>🎯 Project Goals</h3>
+            <ul>
+                <li>[GOAL_1]</li>
+                <li>[GOAL_2]</li>
+                <li>[GOAL_3]</li>
+                <li>[GOAL_4]</li>
+            </ul>
+        </section>
+
+        <!-- Development Timeline -->
+        <section class="story-section">
+            <h2>⏱️ Development Timeline</h2>
+            <p>Key milestones in the development of [PROJECT_NAME]:</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">[DATE_1]</div>
+                    <h4>[MILESTONE_1_TITLE]</h4>
+                    <p>[MILESTONE_1_DESCRIPTION]</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">[DATE_2]</div>
+                    <h4>[MILESTONE_2_TITLE]</h4>
+                    <p>[MILESTONE_2_DESCRIPTION]</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">[DATE_3]</div>
+                    <h4>[MILESTONE_3_TITLE]</h4>
+                    <p>[MILESTONE_3_DESCRIPTION]</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">[DATE_4]</div>
+                    <h4>[MILESTONE_4_TITLE]</h4>
+                    <p>[MILESTONE_4_DESCRIPTION]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section class="story-section">
+            <h2>✨ Key Features</h2>
+            <p>What makes [PROJECT_NAME] special:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>🎯 [FEATURE_1_TITLE]</h4>
+                    <p>[FEATURE_1_DESCRIPTION]</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h4>⚡ [FEATURE_2_TITLE]</h4>
+                    <p>[FEATURE_2_DESCRIPTION]</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h4>🛡️ [FEATURE_3_TITLE]</h4>
+                    <p>[FEATURE_3_DESCRIPTION]</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h4>🎨 [FEATURE_4_TITLE]</h4>
+                    <p>[FEATURE_4_DESCRIPTION]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Stack -->
+        <section class="story-section">
+            <h2>🔧 Technology Stack</h2>
+            <p>The technologies and tools that power [PROJECT_NAME]:</p>
+            
+            <h4>Frontend</h4>
+            <div class="tech-stack">
+                <span class="tech-badge">[FRONTEND_TECH_1]</span>
+                <span class="tech-badge">[FRONTEND_TECH_2]</span>
+                <span class="tech-badge">[FRONTEND_TECH_3]</span>
+                <span class="tech-badge">[FRONTEND_TECH_4]</span>
+            </div>
+            
+            <h4>Backend</h4>
+            <div class="tech-stack">
+                <span class="tech-badge">[BACKEND_TECH_1]</span>
+                <span class="tech-badge">[BACKEND_TECH_2]</span>
+                <span class="tech-badge">[BACKEND_TECH_3]</span>
+                <span class="tech-badge">[BACKEND_TECH_4]</span>
+            </div>
+            
+            <h4>Tools & Services</h4>
+            <div class="tech-stack">
+                <span class="tech-badge">[TOOL_1]</span>
+                <span class="tech-badge">[TOOL_2]</span>
+                <span class="tech-badge">[TOOL_3]</span>
+                <span class="tech-badge">[TOOL_4]</span>
+            </div>
+        </section>
+
+        <!-- Project Statistics -->
+        <section class="story-section">
+            <h2>📊 Project Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">[LINES_OF_CODE]</div>
+                    <div>Lines of Code</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">[COMMITS_COUNT]</div>
+                    <div>Commits</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">[CONTRIBUTORS]</div>
+                    <div>Contributors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">[GITHUB_STARS]</div>
+                    <div>GitHub Stars</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">[VERSION]</div>
+                    <div>Current Version</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">[DEVELOPMENT_TIME]</div>
+                    <div>Development Time</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges & Solutions -->
+        <section class="story-section">
+            <h2>🧩 Challenges & Solutions</h2>
+            <p>Key challenges encountered during development and how they were solved:</p>
+            
+            <h4>Challenge 1: [CHALLENGE_1_TITLE]</h4>
+            <p><strong>Problem:</strong> [CHALLENGE_1_PROBLEM]</p>
+            <p><strong>Solution:</strong> [CHALLENGE_1_SOLUTION]</p>
+            
+            <h4>Challenge 2: [CHALLENGE_2_TITLE]</h4>
+            <p><strong>Problem:</strong> [CHALLENGE_2_PROBLEM]</p>
+            <p><strong>Solution:</strong> [CHALLENGE_2_SOLUTION]</p>
+            
+            <h4>Challenge 3: [CHALLENGE_3_TITLE]</h4>
+            <p><strong>Problem:</strong> [CHALLENGE_3_PROBLEM]</p>
+            <p><strong>Solution:</strong> [CHALLENGE_3_SOLUTION]</p>
+        </section>
+
+        <!-- Future Plans -->
+        <section class="story-section">
+            <h2>🚀 Future Plans</h2>
+            <p>What's coming next for [PROJECT_NAME]:</p>
+            
+            <h4>Short Term (Next 3 months)</h4>
+            <ul>
+                <li>⏳ [SHORT_TERM_PLAN_1]</li>
+                <li>⏳ [SHORT_TERM_PLAN_2]</li>
+                <li>⏳ [SHORT_TERM_PLAN_3]</li>
+            </ul>
+            
+            <h4>Long Term (Next 6-12 months)</h4>
+            <ul>
+                <li>🔮 [LONG_TERM_PLAN_1]</li>
+                <li>🔮 [LONG_TERM_PLAN_2]</li>
+                <li>🔮 [LONG_TERM_PLAN_3]</li>
+            </ul>
+        </section>
+
+        <!-- Contact & Contribute -->
+        <div class="contact-card">
+            <h3>🤝 Get Involved</h3>
+            <p>Interested in contributing to [PROJECT_NAME] or have questions?</p>
+            <div class="contact-links">
+                <a href="[GITHUB_URL]" target="_blank" rel="noopener" class="contact-link">
+                    📱 GitHub
+                </a>
+                <a href="[ISSUES_URL]" target="_blank" rel="noopener" class="contact-link">
+                    🐛 Report Issues
+                </a>
+                <a href="[DISCUSSIONS_URL]" target="_blank" rel="noopener" class="contact-link">
+                    💬 Discussions
+                </a>
+                <a href="mailto:[CONTACT_EMAIL]" class="contact-link">
+                    ✉️ Email
+                </a>
+            </div>
+        </div>
+
+        <!-- About the Developer -->
+        <section class="story-section">
+            <h2>👨‍💻 About the Developer</h2>
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <p>Hi! I'm <strong>Jitesh Jhawar</strong>, and I created [PROJECT_NAME] as part of my journey in software development.</p>
+                    <p>[PERSONAL_PROJECT_STORY]</p>
+                    <p>This project represents [PERSONAL_LEARNING_EXPERIENCE] and I hope it helps others in their own development journey.</p>
+                    
+                    <div class="mt-3">
+                        <a href="/about.html" class="btn btn-primary mr-3">Learn More About Me</a>
+                        <a href="/repositories.html" class="btn btn-outline-primary">View All Projects</a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="tech-stack">
+                        <span class="tech-badge">Developer</span>
+                        <span class="tech-badge">Creator</span>
+                        <span class="tech-badge">Problem Solver</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    
+    <!-- Load Navigation and Footer -->
+    <script>
+        $(document).ready(function() {
+            $("#nav-placeholder").load("nav.html");
+            $("#footer-placeholder").load("footer-template.html");
+        });
+    </script>
+    
+    <!-- Page Scripts -->
+    <script>
+        // Animate numbers on scroll
+        function animateNumbers() {
+            $('.stat-number').each(function() {
+                const $this = $(this);
+                const countTo = $this.text();
+                
+                $({ countNum: 0 }).animate({
+                    countNum: countTo
+                }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function() {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function() {
+                        $this.text(countTo);
+                    }
+                });
+            });
+        }
+        
+        // Trigger animation when statistics section comes into view
+        $(window).scroll(function() {
+            const $stats = $('.stats-grid');
+            if ($stats.length && !$stats.hasClass('animated')) {
+                const statsTop = $stats.offset().top;
+                const statsBottom = statsTop + $stats.outerHeight();
+                const windowTop = $(window).scrollTop();
+                const windowBottom = windowTop + $(window).height();
+                
+                if (windowBottom > statsTop && windowTop < statsBottom) {
+                    $stats.addClass('animated');
+                    animateNumbers();
+                }
+            }
+        });
+        
+        // Smooth hover effects for tech badges
+        $('.tech-badge').hover(
+            function() {
+                $(this).css('transform', 'translateY(-2px)');
+            },
+            function() {
+                $(this).css('transform', 'translateY(0)');
+            }
+        );
+    </script>
+</body>
+</html>

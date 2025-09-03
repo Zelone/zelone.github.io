@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>[PAGE_TITLE] - Jitesh Jhawar | Zelone Portfolio</title>
+    <meta name="description" content="[PAGE_DESCRIPTION]">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jitesh Jhawar">
+    <meta name="keywords" content="[PAGE_KEYWORDS], Jitesh Jhawar, Zelone, portfolio, project">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Custom page styles (optional) -->
+    <style>
+        /* Add any page-specific styles here */
+        .project-hero {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+        }
+        
+        .project-meta {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .demo-section {
+            border: 2px dashed #dee2e6;
+            padding: 2rem;
+            text-align: center;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Zelone</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Repositories
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="nav-repo">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </li>
+                        <li class="nav-item" id="nav-about">
+                            <a class="nav-link" href="about.html">About Me</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Breadcrumb Navigation (optional) -->
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent px-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="repositories.html">Projects</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">[CURRENT_PAGE]</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="container">
+            <section class="project-hero">
+                <h1>[PROJECT_TITLE]</h1>
+                <p class="lead">[PROJECT_SUBTITLE]</p>
+                <div class="mt-4">
+                    <a href="[GITHUB_URL]" target="_blank" rel="noopener" class="btn btn-outline-light mr-3">
+                        📱 View on GitHub
+                    </a>
+                    <a href="[LIVE_DEMO_URL]" target="_blank" rel="noopener" class="btn btn-gradient">
+                        🚀 Live Demo
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- Project Information -->
+        <div class="container">
+            <!-- Project Meta -->
+            <section class="project-meta">
+                <div class="row">
+                    <div class="col-md-3">
+                        <strong>🔧 Technology:</strong><br>
+                        <span class="text-muted">[TECHNOLOGY_STACK]</span>
+                    </div>
+                    <div class="col-md-3">
+                        <strong>📅 Status:</strong><br>
+                        <span class="text-muted">[PROJECT_STATUS]</span>
+                    </div>
+                    <div class="col-md-3">
+                        <strong>📝 License:</strong><br>
+                        <span class="text-muted">[LICENSE_TYPE]</span>
+                    </div>
+                    <div class="col-md-3">
+                        <strong>⭐ Version:</strong><br>
+                        <span class="text-muted">[VERSION]</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Content Sections -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Overview Section -->
+                    <section class="content-section">
+                        <h2 class="text-gradient">📋 Overview</h2>
+                        <p>
+                            [PROJECT_OVERVIEW_TEXT]
+                        </p>
+                    </section>
+
+                    <!-- Features Section -->
+                    <section class="content-section">
+                        <h2 class="text-gradient">✨ Features</h2>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">✅ [FEATURE_1]</li>
+                            <li class="mb-2">✅ [FEATURE_2]</li>
+                            <li class="mb-2">✅ [FEATURE_3]</li>
+                            <li class="mb-2">⏳ [UPCOMING_FEATURE] <small class="text-muted">(Coming Soon)</small></li>
+                        </ul>
+                    </section>
+
+                    <!-- Installation/Usage Section -->
+                    <section class="content-section">
+                        <h2 class="text-gradient">🚀 Getting Started</h2>
+                        
+                        <h3>Installation</h3>
+                        <div class="code-block">
+                            <code>
+                                # Clone the repository<br>
+                                git clone [REPOSITORY_URL]<br>
+                                <br>
+                                # Navigate to project directory<br>
+                                cd [PROJECT_DIRECTORY]<br>
+                                <br>
+                                # Install dependencies<br>
+                                [INSTALL_COMMAND]
+                            </code>
+                        </div>
+
+                        <h3>Usage</h3>
+                        <p>[USAGE_INSTRUCTIONS]</p>
+                        
+                        <div class="code-block">
+                            <code>
+                                [USAGE_EXAMPLE_CODE]
+                            </code>
+                        </div>
+                    </section>
+
+                    <!-- Screenshots/Demo Section -->
+                    <section class="content-section">
+                        <h2 class="text-gradient">📸 Screenshots</h2>
+                        <div class="demo-section">
+                            <p class="text-muted">
+                                🖼️ Screenshots and demo content go here<br>
+                                <small>Add images, GIFs, or embedded demos</small>
+                            </p>
+                            <!-- Add your screenshots/images here -->
+                            <!-- 
+                            <img src="screenshot1.png" class="img-fluid rounded mb-3" alt="Screenshot 1">
+                            <img src="screenshot2.png" class="img-fluid rounded mb-3" alt="Screenshot 2">
+                            -->
+                        </div>
+                    </section>
+
+                    <!-- Technical Details -->
+                    <section class="content-section">
+                        <h2 class="text-gradient">🔧 Technical Details</h2>
+                        
+                        <h3>Architecture</h3>
+                        <p>[ARCHITECTURE_DESCRIPTION]</p>
+                        
+                        <h3>Key Technologies</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Frontend</h4>
+                                <ul>
+                                    <li>[FRONTEND_TECH_1]</li>
+                                    <li>[FRONTEND_TECH_2]</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Backend</h4>
+                                <ul>
+                                    <li>[BACKEND_TECH_1]</li>
+                                    <li>[BACKEND_TECH_2]</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Contributing -->
+                    <section class="content-section">
+                        <h2 class="text-gradient">🤝 Contributing</h2>
+                        <p>Contributions are welcome! Please feel free to submit a Pull Request.</p>
+                        
+                        <ol>
+                            <li>Fork the project</li>
+                            <li>Create your feature branch (<code>git checkout -b feature/AmazingFeature</code>)</li>
+                            <li>Commit your changes (<code>git commit -m 'Add some AmazingFeature'</code>)</li>
+                            <li>Push to the branch (<code>git push origin feature/AmazingFeature</code>)</li>
+                            <li>Open a Pull Request</li>
+                        </ol>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Quick Links -->
+                    <section class="content-section">
+                        <h3 class="text-gradient">🔗 Quick Links</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="[GITHUB_URL]" target="_blank" rel="noopener">📱 GitHub Repository</a></li>
+                            <li><a href="[LIVE_DEMO_URL]" target="_blank" rel="noopener">🚀 Live Demo</a></li>
+                            <li><a href="[DOCUMENTATION_URL]" target="_blank" rel="noopener">📚 Documentation</a></li>
+                            <li><a href="[ISSUES_URL]" target="_blank" rel="noopener">🐛 Report Issues</a></li>
+                        </ul>
+                    </section>
+
+                    <!-- Project Stats (optional) -->
+                    <section class="content-section">
+                        <h3 class="text-gradient">📊 Project Stats</h3>
+                        <div class="row text-center">
+                            <div class="col-6">
+                                <div class="border rounded p-2">
+                                    <h4 class="text-primary">[STAR_COUNT]</h4>
+                                    <small>Stars</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="border rounded p-2">
+                                    <h4 class="text-success">[FORK_COUNT]</h4>
+                                    <small>Forks</small>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Related Projects -->
+                    <section class="content-section">
+                        <h3 class="text-gradient">🔗 Related Projects</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="[RELATED_PROJECT_1_URL]">[RELATED_PROJECT_1]</a></li>
+                            <li><a href="[RELATED_PROJECT_2_URL]">[RELATED_PROJECT_2]</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="repositories.html">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Connect</h5>
+                    <div class="social-links">
+                        <a href="https://github.com/zelone" target="_blank" rel="noopener" aria-label="GitHub">
+                            <span>📱</span>
+                        </a>
+                        <a href="mailto:your.email@example.com" aria-label="Email">
+                            <span>✉️</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h5>About This Project</h5>
+                    <p>Part of Jitesh Jhawar's portfolio. Built with modern web technologies.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jitesh Jhawar (Zelone). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin=\"anonymous\"></script>
+    <script src="script.js"></script>
+    
+    <!-- Custom page scripts (optional) -->
+    <script>
+        // Add any page-specific JavaScript here
+        console.log('Page loaded: [PAGE_TITLE]');
+    </script>
+</body>
+</html>

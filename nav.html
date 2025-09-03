@@ -1,5 +1,5 @@
 <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <a class="navbar-brand" href="/">Zelone</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,63 +8,135 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <script>
-                var srnode = document.createElement('span')
-                srnode.classList.add('sr-only')
-                srnode.innerText = '(current)'
-
-                var navs = document.getElementsByClassName('nav-item')
-                for (var i = 0; i < navs.length; ++i) {
-                    if (navs.item(i).classList.contains('active')) {
-                        navs.item(i).classList.remove('active')
-                        navs.item(i).childNodes[1].removeChild(navs.item(i).childNodes[1].childNodes[1])
-                    }
-                }
-                if (window.location.pathname.endsWith('about')) {
-                    var nav = document.getElementById('nav-about')
-                    nav.classList.add('active')
-                    nav.childNodes[1].appendChild(srnode)
-                } else if (window.location.pathname.endsWith('/')) {
-                    } else {
-                    var nav = document.getElementById('nav-repo')
-                    nav.classList.add('active')
-                    nav.childNodes[1].appendChild(srnode)
-                    
-                }
-                </script>
-
-                <li class="nav-item active" id="nav-repo">
-                    <a class="nav-link" href="/repositories">Repositories
-                        <span  class="sr-only">(current)</span>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Repositories
                     </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="nav-repo">
+                        <!-- Loading message -->
+                        <a class="dropdown-item text-muted">Loading repositories...</a>
+                    </div>
                 </li>
-                <li class="nav-item" id="nav-link">
-                    <a class="nav-link" href="/ZTaskManager">Task Manager</a>
-                    
-                </li>
+
                 <li class="nav-item" id="nav-about">
-                    <a class="nav-link" href="/about">About me</a>
+                    <a class="nav-link" href="/about.html">About me</a>
                 </li>
-                <!--li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Fast Links
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li-->
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
+    
+    <!-- Navigation JavaScript -->
+    <script>
+        // Wait for jQuery to be available
+        function loadRepositoryDropdown() {
+            // Check if jQuery is loaded
+            if (typeof $ === 'undefined') {
+                setTimeout(loadRepositoryDropdown, 100);
+                return;
+            }
+            
+            // Fetch repositories from GitHub API
+            $.getJSON('https://api.github.com/users/zelone/repos?sort=updated&per_page=20')
+                .done(function (data) {
+                    const dropdown = document.getElementById('nav-repo');
+                    dropdown.innerHTML = ''; // Clear loading message
+                    
+                    // Filter repositories with GitHub Pages
+                    const pagesRepos = data
+                        .filter(repo => !repo.fork && repo.has_pages)
+                        .slice(0, 3); // Get top 3 most recently updated
+                    
+                    // Add repositories to dropdown
+                    pagesRepos.forEach(repo => {
+                        const url = repo.name === 'zelone.github.io' ? '/' : `/${repo.name}`;
+                        const link = document.createElement('a');
+                        link.className = 'dropdown-item';
+                        link.href = url;
+                        link.innerHTML = `<strong>${repo.name}</strong><br><small class="text-muted">${repo.description || 'No description'}</small>`;
+                        dropdown.appendChild(link);
+                    });
+                    
+                    // Add divider if we have repositories
+                    if (pagesRepos.length > 0) {
+                        const divider = document.createElement('div');
+                        divider.className = 'dropdown-divider';
+                        dropdown.appendChild(divider);
+                    }
+                    
+                    // Add "List All Repositories" link
+                    const listAllLink = document.createElement('a');
+                    listAllLink.className = 'dropdown-item font-weight-bold';
+                    listAllLink.href = '/repositories.html';
+                    listAllLink.innerHTML = '📚 List All Repositories';
+                    dropdown.appendChild(listAllLink);
+                    
+                    console.log('Navigation loaded with', pagesRepos.length, 'repositories');
+                })
+                .fail(function(xhr, status, error) {
+                    console.warn('Could not load repositories:', error);
+                    const dropdown = document.getElementById('nav-repo');
+                    dropdown.innerHTML = `
+                        <a class="dropdown-item text-danger">Could not load repositories</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item font-weight-bold" href="/repositories.html">📚 List All Repositories</a>
+                    `;
+                });
+        }
+        
+        // Set active navigation state
+        function setActiveNavigation() {
+            const path = window.location.pathname.toLowerCase();
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            // Remove existing active states
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                const srSpan = item.querySelector('.sr-only');
+                if (srSpan) srSpan.remove();
+            });
+            
+            // Add active state based on current path
+            if (path.includes('about') || path.endsWith('/about.html')) {
+                const aboutNav = document.getElementById('nav-about');
+                if (aboutNav) {
+                    aboutNav.classList.add('active');
+                    const link = aboutNav.querySelector('.nav-link');
+                    if (link) {
+                        const srSpan = document.createElement('span');
+                        srSpan.classList.add('sr-only');
+                        srSpan.textContent = '(current)';
+                        link.appendChild(srSpan);
+                    }
+                }
+            } else if (path.includes('repositories') || path.endsWith('/repositories.html')) {
+                const repoNav = document.querySelector('.nav-item.dropdown');
+                if (repoNav) {
+                    repoNav.classList.add('active');
+                    const link = repoNav.querySelector('.nav-link');
+                    if (link) {
+                        const srSpan = document.createElement('span');
+                        srSpan.classList.add('sr-only');
+                        srSpan.textContent = '(current)';
+                        link.appendChild(srSpan);
+                    }
+                }
+            }
+        }
+        
+        // Initialize navigation when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadRepositoryDropdown();
+            setActiveNavigation();
+        });
+        
+        // Also try to load immediately in case DOMContentLoaded already fired
+        if (document.readyState === 'loading') {
+            // Still loading, wait for DOMContentLoaded
+        } else {
+            // Already loaded
+            loadRepositoryDropdown();
+            setActiveNavigation();
+        }
+    </script>
 </div>

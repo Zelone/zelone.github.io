@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>[PROJECT_NAME] Documentation - Jitesh Jhawar | Zelone Portfolio</title>
+    <meta name="description" content="[PROJECT_DESCRIPTION] - Complete documentation and API reference">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jitesh Jhawar">
+    <meta name="keywords" content="[PROJECT_KEYWORDS], documentation, API, reference, guide">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Page-specific styles -->
+    <style>
+        .docs-header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .docs-nav {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 20px;
+        }
+        
+        .docs-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .docs-nav li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .docs-nav a {
+            color: #495057;
+            text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 5px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .docs-nav a:hover,
+        .docs-nav a.active {
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .docs-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .code-example {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-left: 4px solid #007bff;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 5px 5px 0;
+            font-family: 'Monaco', 'Consolas', monospace;
+        }
+        
+        .api-endpoint {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        
+        .method-badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .method-get { background: #d4edda; color: #155724; }
+        .method-post { background: #d1ecf1; color: #0c5460; }
+        .method-put { background: #fff3cd; color: #856404; }
+        .method-delete { background: #f8d7da; color: #721c24; }
+        
+        .toc-item {
+            padding-left: 1rem;
+        }
+        
+        .search-docs {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Placeholder -->
+    <div id="nav-placeholder"></div>
+    
+    <!-- Documentation Header -->
+    <header class="docs-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1>📚 [PROJECT_NAME] Documentation</h1>
+                    <p class="lead">Complete guide and API reference for [PROJECT_NAME]</p>
+                </div>
+                <div class="col-md-4 text-md-right">
+                    <a href="[GITHUB_URL]" target="_blank" rel="noopener" class="btn btn-outline-light mr-2">
+                        📱 GitHub
+                    </a>
+                    <a href="[DEMO_URL]" target="_blank" rel="noopener" class="btn btn-light">
+                        🚀 Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Documentation Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar Navigation -->
+            <div class="col-md-3">
+                <div class="docs-nav">
+                    <h6>📋 Table of Contents</h6>
+                    <div class="search-docs">
+                        <input type="text" id="docsSearch" class="form-control form-control-sm" placeholder="Search docs...">
+                    </div>
+                    <ul id="tocList">
+                        <li><a href="#getting-started" class="active">Getting Started</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#basic-usage">Basic Usage</a></li>
+                        <li><a href="#api-reference">API Reference</a>
+                            <ul class="toc-item">
+                                <li><a href="#endpoints">Endpoints</a></li>
+                                <li><a href="#authentication">Authentication</a></li>
+                                <li><a href="#examples">Examples</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#configuration">Configuration</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="#changelog">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9">
+                <!-- Getting Started -->
+                <section class="docs-content" id="getting-started">
+                    <h2>🚀 Getting Started</h2>
+                    <p>[GETTING_STARTED_DESCRIPTION]</p>
+                    
+                    <h3>Quick Start</h3>
+                    <div class="code-example">
+                        <code>
+# Clone the repository<br>
+git clone [REPOSITORY_URL]<br>
+<br>
+# Navigate to project<br>
+cd [PROJECT_DIRECTORY]<br>
+<br>
+# Install dependencies<br>
+[INSTALL_COMMAND]<br>
+<br>
+# Start the application<br>
+[START_COMMAND]
+                        </code>
+                    </div>
+                </section>
+
+                <!-- Installation -->
+                <section class="docs-content" id="installation">
+                    <h2>📦 Installation</h2>
+                    <p>[INSTALLATION_DESCRIPTION]</p>
+                    
+                    <h3>Prerequisites</h3>
+                    <ul>
+                        <li>[PREREQUISITE_1]</li>
+                        <li>[PREREQUISITE_2]</li>
+                        <li>[PREREQUISITE_3]</li>
+                    </ul>
+                    
+                    <h3>Installation Options</h3>
+                    <div class="code-example">
+                        <strong>Option 1: [INSTALL_METHOD_1]</strong><br>
+                        <code>[INSTALL_COMMAND_1]</code>
+                    </div>
+                    
+                    <div class="code-example">
+                        <strong>Option 2: [INSTALL_METHOD_2]</strong><br>
+                        <code>[INSTALL_COMMAND_2]</code>
+                    </div>
+                </section>
+
+                <!-- Basic Usage -->
+                <section class="docs-content" id="basic-usage">
+                    <h2>📖 Basic Usage</h2>
+                    <p>[BASIC_USAGE_DESCRIPTION]</p>
+                    
+                    <h3>Simple Example</h3>
+                    <div class="code-example">
+                        <code>
+[BASIC_USAGE_EXAMPLE]
+                        </code>
+                    </div>
+                    
+                    <h3>Configuration</h3>
+                    <div class="code-example">
+                        <code>
+[CONFIGURATION_EXAMPLE]
+                        </code>
+                    </div>
+                </section>
+
+                <!-- API Reference -->
+                <section class="docs-content" id="api-reference">
+                    <h2>🔌 API Reference</h2>
+                    <p>[API_DESCRIPTION]</p>
+                    
+                    <h3 id="endpoints">Endpoints</h3>
+                    
+                    <!-- Example API Endpoint -->
+                    <div class="api-endpoint">
+                        <h4>
+                            <span class="method-badge method-get">GET</span>
+                            <code>[ENDPOINT_PATH_1]</code>
+                        </h4>
+                        <p>[ENDPOINT_1_DESCRIPTION]</p>
+                        
+                        <strong>Parameters:</strong>
+                        <ul>
+                            <li><code>[PARAM_1]</code> - [PARAM_1_DESCRIPTION]</li>
+                            <li><code>[PARAM_2]</code> - [PARAM_2_DESCRIPTION]</li>
+                        </ul>
+                        
+                        <strong>Response:</strong>
+                        <div class="code-example">
+                            <code>[RESPONSE_EXAMPLE_1]</code>
+                        </div>
+                    </div>
+                    
+                    <div class="api-endpoint">
+                        <h4>
+                            <span class="method-badge method-post">POST</span>
+                            <code>[ENDPOINT_PATH_2]</code>
+                        </h4>
+                        <p>[ENDPOINT_2_DESCRIPTION]</p>
+                        
+                        <strong>Request Body:</strong>
+                        <div class="code-example">
+                            <code>[REQUEST_BODY_EXAMPLE]</code>
+                        </div>
+                        
+                        <strong>Response:</strong>
+                        <div class="code-example">
+                            <code>[RESPONSE_EXAMPLE_2]</code>
+                        </div>
+                    </div>
+                    
+                    <h3 id="authentication">🔐 Authentication</h3>
+                    <p>[AUTHENTICATION_DESCRIPTION]</p>
+                    <div class="code-example">
+                        <code>[AUTHENTICATION_EXAMPLE]</code>
+                    </div>
+                    
+                    <h3 id="examples">💡 Examples</h3>
+                    <p>Here are some practical examples:</p>
+                    
+                    <h4>Example 1: [EXAMPLE_1_TITLE]</h4>
+                    <div class="code-example">
+                        <code>[EXAMPLE_1_CODE]</code>
+                    </div>
+                    
+                    <h4>Example 2: [EXAMPLE_2_TITLE]</h4>
+                    <div class="code-example">
+                        <code>[EXAMPLE_2_CODE]</code>
+                    </div>
+                </section>
+
+                <!-- Configuration -->
+                <section class="docs-content" id="configuration">
+                    <h2>⚙️ Configuration</h2>
+                    <p>[CONFIGURATION_DESCRIPTION]</p>
+                    
+                    <h3>Environment Variables</h3>
+                    <div class="code-example">
+                        <code>
+[ENV_VAR_1]=[DEFAULT_VALUE_1]<br>
+[ENV_VAR_2]=[DEFAULT_VALUE_2]<br>
+[ENV_VAR_3]=[DEFAULT_VALUE_3]
+                        </code>
+                    </div>
+                    
+                    <h3>Configuration File</h3>
+                    <div class="code-example">
+                        <code>[CONFIG_FILE_EXAMPLE]</code>
+                    </div>
+                </section>
+
+                <!-- Troubleshooting -->
+                <section class="docs-content" id="troubleshooting">
+                    <h2>🔧 Troubleshooting</h2>
+                    
+                    <h3>Common Issues</h3>
+                    
+                    <h4>Issue: [COMMON_ISSUE_1]</h4>
+                    <p><strong>Solution:</strong> [SOLUTION_1]</p>
+                    <div class="code-example">
+                        <code>[SOLUTION_1_CODE]</code>
+                    </div>
+                    
+                    <h4>Issue: [COMMON_ISSUE_2]</h4>
+                    <p><strong>Solution:</strong> [SOLUTION_2]</p>
+                    <div class="code-example">
+                        <code>[SOLUTION_2_CODE]</code>
+                    </div>
+                    
+                    <h3>Getting Help</h3>
+                    <ul>
+                        <li><a href="[GITHUB_ISSUES_URL]" target="_blank">Report a bug</a></li>
+                        <li><a href="[DISCUSSIONS_URL]" target="_blank">Join discussions</a></li>
+                        <li><a href="mailto:[CONTACT_EMAIL]">Contact support</a></li>
+                    </ul>
+                </section>
+
+                <!-- Changelog -->
+                <section class="docs-content" id="changelog">
+                    <h2>📝 Changelog</h2>
+                    
+                    <h3>Version [CURRENT_VERSION] - [RELEASE_DATE]</h3>
+                    <ul>
+                        <li>✅ [CHANGE_1]</li>
+                        <li>🐛 [BUG_FIX_1]</li>
+                        <li>🚀 [ENHANCEMENT_1]</li>
+                    </ul>
+                    
+                    <h3>Version [PREVIOUS_VERSION] - [PREVIOUS_DATE]</h3>
+                    <ul>
+                        <li>✅ [PREVIOUS_CHANGE_1]</li>
+                        <li>🐛 [PREVIOUS_BUG_FIX_1]</li>
+                    </ul>
+                    
+                    <p><a href="[FULL_CHANGELOG_URL]" target="_blank">View full changelog →</a></p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    
+    <!-- Load Navigation and Footer -->
+    <script>
+        $(document).ready(function() {
+            $("#nav-placeholder").load("nav.html");
+            $("#footer-placeholder").load("footer-template.html");
+        });
+    </script>
+    
+    <!-- Documentation Scripts -->
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling for navigation links
+            $('.docs-nav a').click(function(e) {
+                e.preventDefault();
+                const target = $(this.getAttribute('href'));
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 100
+                    }, 500);
+                    
+                    // Update active navigation
+                    $('.docs-nav a').removeClass('active');
+                    $(this).addClass('active');
+                }
+            });
+            
+            // Search functionality
+            $('#docsSearch').on('input', function() {
+                const searchTerm = $(this).val().toLowerCase();
+                $('.docs-nav li').each(function() {
+                    const text = $(this).text().toLowerCase();
+                    $(this).toggle(text.includes(searchTerm));
+                });
+            });
+            
+            // Update active navigation on scroll
+            $(window).scroll(function() {
+                const scrollTop = $(window).scrollTop();
+                $('.docs-content').each(function() {
+                    const sectionTop = $(this).offset().top - 150;
+                    const sectionBottom = sectionTop + $(this).outerHeight();
+                    
+                    if (scrollTop >= sectionTop && scrollTop < sectionBottom) {
+                        const id = $(this).attr('id');
+                        $('.docs-nav a').removeClass('active');
+                        $(`.docs-nav a[href="#${id}"]`).addClass('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
