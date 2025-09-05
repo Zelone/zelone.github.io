@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Profile - Jitesh Jhawar | Zelone Portfolio</title>
+    <meta name="description" content="My Job Portfolio.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jitesh Jhawar">
+    <meta name="keywords" content="CV, Jobs, about, story, software development">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- Page-specific styles -->
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #fd7e14 0%, #e83e8c 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .about-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+
+        .story-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #007bff;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.75rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: #007bff;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #007bff;
+        }
+
+        .timeline-date {
+            color: #007bff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech-badge {
+            background: #f8f9fa;
+            color: #495057;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #007bff 0%, #6f42c1 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Placeholder -->
+    <div id="nav-placeholder"></div>
+
+    <!-- About Hero -->
+    <div class="container">
+        <section class="about-hero">
+            <h1>About Me</h1>
+            <p>Discover the story behind my work and journey as a software developer.</p>
+        </section>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Project Story -->
+        <section class="story-section">
+            <h2>📖 The CV</h2>
+            <p class="lead">My Profile</p>
+            <p>I started coding in school, where I built a simple HTML-based adventure game and a Java-MySQL
+                banking app. That curiosity grew into a career spanning ERP system, VR development, and data
+                analytics. <br />
+                I’ve worked with startups, research labs, and enterprises — always solving real problems. At Softech
+                ERP Solutions, I built an ERP system from scratch for Intime Ltd, streamlining workflows for 500+
+                employees. At Dublin City University, I collaborated with Dr. Enda Donlon and Dr. Peter Tiernan to
+                design a VR classroom simulation that captured and analyzed student interactions in real time. With
+                Fineax LLC, I automated DICOM data anonymization pipelines for medical data using Python, PyDicom,
+                and AWS. <br />
+                My journey has been entirely self-taught through hands-on projects, YouTube tutorials, and open-
+                source contributions. I’ve built 20+ GitHub repositories, ranging from VR engines and automation tools
+                to data analytics workflows and multiplayer game prototypes.
+                I thrive on challenges that combine creativity and problem-solving — whether it’s optimizing
+                databases, designing immersive learning environments, or exploring game mechanics.
+                Currently, I’m excited to keep building in the areas of software development, VR/game design, and
+                data-driven applications, while collaborating with teams that value innovation, curiosity, and impact
+            </p>
+
+            <h3>🎯 Education</h3>
+            <ul>
+                <li><b>M.Sc. in Data Analytics</b> <br />
+                    Dublin City University, Dublin, Ireland | Aug 2021 – Aug 2023 <br />
+                    Thesis: Financial narrative Summarization </li>
+                <li>
+                    <b>B.Tech. in Computer Science</b> <br />
+                    SRM Institute of Science and Technology, Chennai, India | Jul 2016 – May 2020 <br />
+                    Thesis: Cloud Hack Detection System using Machine Learning
+                </li>
+            </ul>
+        </section>
+
+        <!-- Jobs Timeline -->
+        <section class="story-section">
+            <h2>⏱️ Jobs Timeline</h2>
+            <p>Key milestones in my career:</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">Sep 2021</span><b> - </b>
+                    <span class="timeline-date">Present</span>
+                    <h4>Freelance Developer | Fineax LLC</h4>
+                    <p>
+                    <ul>
+                        <li>Built DICOM data anonymization automation software (Python, Boto3, PyDicom).</li>
+                        <li>Automated handling of large-scale medical datasets for secure processing.</li>
+                        <li>Collaborated with medical data specialists to streamline workflows.</li>
+                    </ul>
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">Mar 2023</span><b> - </b>
+                    <span class="timeline-date">Jul 2025</span>
+                    <h4>Research Assistant | Dublin City University, Dublin, Ireland</h4>
+                    <p>
+                    <ul>
+                        <li>Designed and developed VR classroom simulation (Unity VR) with 3D assets.</li>
+                        <li>Integrated Python Flask backend APIs to securely store headset experiment data.</li>
+                        <li>Built a web-based data visualization platform for VR research results.</li>
+                        <li>Collaborated closely with Dr. Enda Donlon and Dr. Peter Tiernan on educational technology
+                            research.</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2021</span><b> - </b>
+                    <span class="timeline-date">2023</span>
+                    <h4>Customer Service Roles | Dublin, Ireland</h4>
+                    <h6>Gained teamwork, adaptability, and communication skills in customer-facing roles.</h6>
+                    <p>
+                    <ul>
+                        <li>Sales Assistant, Supervalu (5 months).</li>
+                        <li>Pizza Cook & Sales Associate, Fired Pizza (6 months).</li>
+                        <li>Pizza Cook & Sales Associate, Four Star Pizza (13 months).</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Jan 2021</span><b> - </b>
+                    <span class="timeline-date">Aug 2021</span>
+                    <h4>Software Developer | Softech ERP Solutions Pvt Ltd, India</h4>
+                    <p>
+                    <ul>
+                        <li>Sole developer of ERP system (Core PHP, MySQL, CPanel) for Intime Ltd, serving 500+
+                            employees nationwide.</li>
+                        <li>Conducted requirement analysis by interviewing stakeholders and mapping workflows.</li>
+                        <li>Improved efficiency by 80–90% and enabled weekly processing of 20GB+ transaction data.</li>
+                        <li>Recognized for independent ownership and successful delivery of enterprise-scale ERP
+                            solution.</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2020</span><b> - </b>
+                    <span class="timeline-date">2021</span>
+                    <h4>Product Manager & Error Analyst | Cognitive Application Research Lab (CARL), SRM Institute</h4>
+                    <p>
+                    <ul>
+                        <li>Created bulk email system (Java) and WhatsApp messenger (Python scraping) resistant to
+                            blocking.</li>
+                        <li>Hosted Google AI | Explore ML workshop; delivered programming-to-ML session.</li>
+                        <li>Recognized by Google AI representative with Certificate of Appreciation for clarity and
+                            depth.</li>
+                        <li>Mentored junior lab members in debugging, error analysis, and project workflows.</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2017</span><b> - </b>
+                    <span class="timeline-date">2020</span>
+                    <h4>Internships & Startup Projects | India</h4>
+                    <p>
+                    <ul>
+                        <li><b>Ashvau:</b> Built real-time online inauguration system (NuxtJS, MongoDB) with 220+ global
+                            users.</li>
+                        <li><b>Repairbuck:</b> Integrated backend–frontend (Ruby on Rails, PostgreSQL) for a tech repair
+                            app, scaling to 150+ users in 4 months.</li>
+                        <li><b>Indus Net Technologies:</b> PL/SQL database programming for data migration and
+                            optimization.</li>
+                        <li><b>Arena Multimedia:</b> Rebuilt login system in WordPress, improving authentication
+                            security.</li>
+                        <li><b>Hackathon:</b> Developed hospital management system (Python Flask) enabling faster,
+                            transparent transactions; led backend team of 3.</li>
+                    </ul>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Key Projects -->
+        <section class="story-section">
+            <h2>✨ Github Projects</h2>
+            <p>Link to list of github projects :</p>
+            <a href="/repositories.html">Projects List</a>
+        </section>
+        <!-- Languages: Python, Java, C++, PHP, JavaScript 
+Frameworks/Tools: Flask, Ruby on Rails, NuxtJS, Unity VR 
+ -->
+        <!-- Technology Stack -->
+        <section class="story-section">
+            <h2>🔧 Technology Stack</h2>
+            <p>The technologies and tools that power my projects:</p>
+
+            <h4>Languages</h4>
+            <div class="tech-stack">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Java</span>
+                <span class="tech-badge">C++</span>
+                <span class="tech-badge">PHP</span>
+                <span class="tech-badge">JavaScript</span>
+            </div>
+            <h4>Frameworks/Tools</h4>
+            <div class="tech-stack">
+                <span class="tech-badge">Flask</span>
+                <span class="tech-badge">Ruby on Rails</span>
+                <span class="tech-badge">NuxtJS</span>
+                <span class="tech-badge">Unity VR</span>
+            </div>
+
+            <h4>Databases</h4>
+            <div class="tech-stack">
+                <span class="tech-badge">MySQL</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">Oracle PL/SQL</span>
+            </div>
+            <h4>Cloud & Automation</h4>
+            <div class="tech-stack">
+                <span class="tech-badge">AWS Boto3</span>
+                <span class="tech-badge">PyDicom</span>
+                <span class="tech-badge">Data Pipelines</span>
+            </div>      
+            <h4>Strengths</h4>
+            <div class="tech-stack">
+                <span class="tech-badge">Machine Learning</span>
+                <span class="tech-badge">Data Analytics</span>
+                <span class="tech-badge">ERP Systems</span>
+                <span class="tech-badge">API Integration</span>
+                <span class="tech-badge">Full-Stack Development</span>
+            </div>
+
+            <h4>Learning Path</h4>
+            <h6>Entirely self-taught via </h6>
+            <div class="tech-stack">
+                <span class="tech-badge">YouTube tutorials</span>
+                <span class="tech-badge">documentation</span>
+                <span class="tech-badge">project-based exploration</span>
+
+            </div>
+        </section>
+
+
+        <!-- Challenges & Solutions 
+        <section class="story-section">
+            <h2>🧩 Challenges & Solutions</h2>
+            <p>Key challenges encountered during development and how they were solved:</p>
+
+            <h4>Challenge 1: [CHALLENGE_1_TITLE]</h4>
+            <p><strong>Problem:</strong> [CHALLENGE_1_PROBLEM]</p>
+            <p><strong>Solution:</strong> [CHALLENGE_1_SOLUTION]</p>
+
+            <h4>Challenge 2: [CHALLENGE_2_TITLE]</h4>
+            <p><strong>Problem:</strong> [CHALLENGE_2_PROBLEM]</p>
+            <p><strong>Solution:</strong> [CHALLENGE_2_SOLUTION]</p>
+
+            <h4>Challenge 3: [CHALLENGE_3_TITLE]</h4>
+            <p><strong>Problem:</strong> [CHALLENGE_3_PROBLEM]</p>
+            <p><strong>Solution:</strong> [CHALLENGE_3_SOLUTION]</p>
+        </section>-->
+
+        <!-- Contact & Contribute -->
+        <div class="contact-card">
+            <h3>🤝 Contact Me</h3>
+            <p>I'm open to discussing new opportunities and collaborations.</p>
+            <div class="contact-links">
+                <a href="https://github.com/Zelone" target="_blank" rel="noopener" class="contact-link">
+                    📱 GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/jitesh-jhawar" target="_blank" rel="noopener" class="contact-link">
+                    📱 LinkedIn
+                </a>
+                <a href="mailto:jiteshjha1997@gmail.com" class="contact-link">
+                    ✉️ Email
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+
+    <!-- Load Navigation and Footer -->
+    <script>
+        $(document).ready(function () {
+            $("#nav-placeholder").load("/nav.html");
+            $("#footer-placeholder").load("/footer-template.html");
+        });
+    </script>
+
+    <!-- Page Scripts -->
+    <script>
+        // Animate numbers on scroll
+        function animateNumbers() {
+            $('.stat-number').each(function () {
+                const $this = $(this);
+                const countTo = $this.text();
+
+                $({ countNum: 0 }).animate({
+                    countNum: countTo
+                }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function () {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function () {
+                        $this.text(countTo);
+                    }
+                });
+            });
+        }
+
+        // Trigger animation when statistics section comes into view
+        $(window).scroll(function () {
+            const $stats = $('.stats-grid');
+            if ($stats.length && !$stats.hasClass('animated')) {
+                const statsTop = $stats.offset().top;
+                const statsBottom = statsTop + $stats.outerHeight();
+                const windowTop = $(window).scrollTop();
+                const windowBottom = windowTop + $(window).height();
+
+                if (windowBottom > statsTop && windowTop < statsBottom) {
+                    $stats.addClass('animated');
+                    animateNumbers();
+                }
+            }
+        });
+
+        // Smooth hover effects for tech badges
+        $('.tech-badge').hover(
+            function () {
+                $(this).css('transform', 'translateY(-2px)');
+            },
+            function () {
+                $(this).css('transform', 'translateY(0)');
+            }
+        );
+    </script>
+</body>
+
+</html>
