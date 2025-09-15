@@ -6,11 +6,13 @@
 // Global configuration
 const CONFIG = {
     GITHUB_USERNAME: 'zelone',
+    GITHUB_USERNAME2: 'Jitesh-Jhawar',
     API_BASE_URL: 'https://api.github.com',
     ITEMS_PER_PAGE: 100,
     COLUMN_COUNT: 2,
     DEBOUNCE_DELAY: 300
 };
+
 
 // Global state
 const state = {
@@ -61,12 +63,21 @@ const api = {
     async fetchRepositories() {
         try {
             const response = await fetch(`${CONFIG.API_BASE_URL}/users/${CONFIG.GITHUB_USERNAME}/repos?per_page=${CONFIG.ITEMS_PER_PAGE}&sort=updated`);
-            
+            const response2 = await fetch(`${CONFIG.API_BASE_URL}/users/${CONFIG.GITHUB_USERNAME2}/repos?per_page=${CONFIG.ITEMS_PER_PAGE}&sort=updated`);
+           
             if (!response.ok) {
                 throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
             }
-            
+            if (!response2.ok) {
+                throw new Error(`GitHub API error: ${response2.status} ${response2.statusText}`);
+            }
+          
             const data = await response.json();
+            const data2 = await response2.json();
+        
+            for (let n of data2) {
+                data.push(n)
+            }
             return data.filter(repo => !repo.fork); // Filter out forks
         } catch (error) {
             console.error('Error fetching repositories:', error);
@@ -142,6 +153,7 @@ const ui = {
                             }
                         </h5>
                         <h6 class="card-subtitle mb-2 text-muted">
+                            User: <span class="color-${utils.escapeHtml(repo.owner.login)}">${utils.escapeHtml(repo.owner.login)}</span> • 
                             ${repo.language ? `Language: <span class="lang">${utils.escapeHtml(repo.language)}</span>` : ''}
                             ${repo.language && repo.size ? ' • ' : ''}
                             ${repo.size ? `Size: <span class="ssize">${utils.formatSize(repo.size)}</span>` : ''}

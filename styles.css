@@ -152,6 +152,14 @@ body {
     font-weight: 600;
 }
 
+.repo-card .color-Zelone {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.repo-card .color-Jitesh-Jhawar {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
 .repo-card .ssize {
     color: var(--muted-color);
 }
