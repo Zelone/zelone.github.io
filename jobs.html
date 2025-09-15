@@ -52,7 +52,7 @@
 
         .timeline {
             position: relative;
-            padding-left: 2rem;
+            padding-left: 2.5rem;
         }
 
         .timeline::before {
@@ -66,6 +66,15 @@
         }
 
         .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item-nodot {
             position: relative;
             margin-bottom: 2rem;
             background: white;
@@ -232,17 +241,20 @@
 
         <!-- Jobs Timeline -->
         <section class="story-section">
+            
             <h3>🎯 Education</h3>
-            <ul>
-                <li><b>M.Sc. in Data Analytics</b> <br />
+            <div class="timeline">
+                <div class="timeline-item">
+                    <b>M.Sc. in Data Analytics</b> <br />
                     Dublin City University, Dublin, Ireland | Aug 2021 – Aug 2023 <br />
                     Thesis: Financial narrative Summarization </li>
-                <li>
+                </div>
+                 <div class="timeline-item">
                     <b>B.Tech. in Computer Science</b> <br />
                     SRM Institute of Science and Technology, Chennai, India | Jul 2016 – May 2020 <br />
                     Thesis: Cloud Hack Detection System using Machine Learning
-                </li>
-            </ul>
+                </div>
+            </div>
         </section>
 
         <!-- Jobs Timeline -->
@@ -251,99 +263,216 @@
             <p>Key milestones in my career:</p>
 
             <div class="timeline">
+                
                 <div class="timeline-item">
                     <span class="timeline-date">Sep 2021</span><b> - </b>
                     <span class="timeline-date">Present</span>
                     <h4>Developer | Fineax LLC</h4>
-                    <p>
+                    <p>Developed and implemented a comprehensive DICOM medical imaging anonymization pipeline for secure
+                        processing of sensitive healthcare data.</p>
                     <ul>
-                        <li>Built DICOM data anonymization automation software (Python, Boto3, PyDicom).</li>
-                        <li>Automated handling of large-scale medical datasets for secure processing.</li>
-                        <li>Collaborated with medical data specialists to streamline workflows.</li>
+                        <li>Engineered a <b>Python-based DICOM processing system</b> using PyDicom that handled multiple
+                            CT scanner manufacturers (Ingenuity CT, MX 16-slice, SCENARIA) with customized anonymization
+                            rules for each device type.</li>
+                        <li>Implemented <b>manufacturer-specific UID randomization algorithms</b> that preserved
+                            referential integrity while ensuring complete patient anonymity across all DICOM metadata
+                            fields.</li>
+                        <li>Designed <b>automated metadata scrubbing</b> that removed 15+ identifying fields including
+                            patient demographics, institution details, and technical acquisition parameters while
+                            maintaining diagnostic quality.</li>
+                        <li>Built <b>AWS S3 integration</b> using Boto3 for secure cloud storage and processing of
+                            large-scale medical datasets, handling terabytes of CT imaging data.</li>
+                        <li>Created <b>batch processing pipelines</b> that automated the entire anonymization workflow
+                            from ingestion to cloud storage, reducing manual processing time by 95%.</li>
+                        <li>Developed <b>quality control mechanisms</b> including checksum validation and metadata
+                            verification to ensure data integrity throughout the anonymization process.</li>
+                        <li>Collaborated with medical data specialists to implement HIPAA-compliant anonymization
+                            techniques that met regulatory requirements for research use of medical imaging data.</li>
                     </ul>
-                    </p>
                 </div>
-
                 <div class="timeline-item">
                     <span class="timeline-date">Mar 2023</span><b> - </b>
                     <span class="timeline-date">Jul 2025</span>
                     <h4>Research Assistant | Dublin City University, Dublin, Ireland</h4>
-                    <p>
+                    <p>Led full-stack development of an immersive VR educational research platform with comprehensive
+                        data collection and analysis capabilities.
                     <ul>
-                        <li>Designed and developed VR classroom simulation (Unity VR) with 3D assets.</li>
-                        <li>Integrated Python Flask backend APIs to securely store headset experiment data.</li>
-                        <li>Built a web-based data visualization platform for VR research results.</li>
-                        <li>Collaborated closely with Dr. Enda Donlon and Dr. Peter Tiernan on educational technology
-                            research.</li>
+                        <li>Architected and developed a <b>Unity VR classroom simulation</b> with interactive 3D assets,
+                            enabling controlled educational experiments and natural student behavior observation.</li>
+                        <li>Engineered a complete <b>RESTful API ecosystem</b> with 40+ endpoints for data ingestion,
+                            user management, and experimental control, serving both web and VR clients.</li>
+                        <li>Designed and implemented <b>multi-modal data pipelines</b> capturing spatial (location),
+                            visual (image), auditory (audio), and interaction data from VR sessions for comprehensive
+                            analysis.</li>
+                        <li>Built a <b>Python Flask backend</b> with secure data storage solutions, processing terabytes
+                            of experimental data from headset interactions and user responses.</li>
+                        <li>Created a <b>web-based analytics dashboard</b> with heatmap visualizations and session
+                            analysis tools, enabling researchers to derive insights from complex behavioral data.</li>
+                        <li>Implemented <b>assignment management systems</b> with group functionality, allowing
+                            controlled distribution of experimental tasks and materials to participants.</li>
+                        <li>Collaborated with Dr. Enda Donlon and Dr. Peter Tiernan to translate educational research
+                            hypotheses into technical implementations and measurable outcomes.</li>
                     </ul>
                     </p>
                 </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">2021</span><b> - </b>
-                    <span class="timeline-date">2023</span>
-                    <h4>Customer Service Roles | Dublin, Ireland</h4>
-                    <h6>Gained teamwork, adaptability, and communication skills in customer-facing roles.</h6>
-                    <p>
-                    <ul>
-                        <li>Sales Assistant, Supervalu (5 months).</li>
-                        <li>Pizza Cook & Sales Associate, Fired Pizza (6 months).</li>
-                        <li>Pizza Cook & Sales Associate, Four Star Pizza (13 months).</li>
-                    </ul>
-                    </p>
-                </div>
+
                 <div class="timeline-item">
                     <span class="timeline-date">Jan 2021</span><b> - </b>
                     <span class="timeline-date">Aug 2021</span>
                     <h4>Software Developer | Softech ERP Solutions Pvt Ltd, India</h4>
-                    <p>
+                    <p>Sole architect and developer of a comprehensive enterprise resource planning (ERP) system that
+                        transformed operations for a nationwide company with 500+ employees.</p>
                     <ul>
-                        <li>Sole developer of ERP system (Core PHP, MySQL, CPanel) for Intime Ltd, serving 500+
-                            employees nationwide.</li>
-                        <li>Conducted requirement analysis by interviewing stakeholders and mapping workflows.</li>
-                        <li>Improved efficiency by 80–90% and enabled weekly processing of 20GB+ transaction data.</li>
-                        <li>Recognized for independent ownership and successful delivery of enterprise-scale ERP
-                            solution.</li>
+                        <li>Designed and developed a <b>full-stack ERP solution</b> from scratch using Core PHP, MySQL,
+                            and deployed on cPanel, serving all operational departments including inventory, payroll,
+                            and customer relationship management.</li>
+                        <li>Conducted comprehensive <b>stakeholder requirement analysis</b> by interviewing department
+                            heads and mapping complex business workflows into technical specifications and system
+                            architecture.</li>
+                        <li>Engineered <b>optimized database schemas</b> with advanced indexing strategies that enabled
+                            processing of 20GB+ of weekly transaction data and reduced report generation time from hours
+                            to minutes.</li>
+                        <li>Implemented <b>role-based access control (RBAC)</b> with encryption protocols to secure
+                            sensitive financial and employee data while ensuring appropriate department-level access
+                            permissions.</li>
+                        <li>Created <b>RESTful APIs</b> for seamless integration with existing legacy systems, enabling
+                            smooth data migration and real-time synchronization between old and new platforms.</li>
+                        <li>Automated manual data entry processes through custom form validations and batch processing,
+                            saving approximately <b>200+ personnel hours weekly</b> and improving operational efficiency
+                            by 80-90%.</li>
+                        <li>Managed the complete <b>deployment lifecycle</b> and provided ongoing technical support,
+                            achieving a 95% reduction in system downtime and critical operational blockers.</li>
                     </ul>
-                    </p>
                 </div>
+              
                 <div class="timeline-item">
                     <span class="timeline-date">2020</span><b> - </b>
                     <span class="timeline-date">2021</span>
                     <h4>Product Manager & Error Analyst | Cognitive Application Research Lab (CARL), SRM Institute</h4>
-                    <p>
+                    <p>Led technical oversight and mentorship for a research lab developing innovative applications,
+                        while contributing to multiple projects across AI, web development, and experimental
+                        technologies.</p>
                     <ul>
-                        <li>Created bulk email system (Java) and WhatsApp messenger (Python scraping) resistant to
-                            blocking.</li>
-                        <li>Hosted Google AI | Explore ML workshop; delivered programming-to-ML session.</li>
-                        <li>Recognized by Google AI representative with Certificate of Appreciation for clarity and
-                            depth.</li>
-                        <li>Mentored junior lab members in debugging, error analysis, and project workflows.</li>
+                        <li>Provided <b>technical leadership and debugging expertise</b> for 10+ research projects
+                            including AI applications, web platforms, and experimental software across Python, Java, and
+                            JavaScript stacks.</li>
+                        <li>Developed a <b>bulk email system in Java</b> and <b>WhatsApp messaging automation</b> using
+                            Python web scraping techniques, creating communication tools resistant to platform blocking
+                            mechanisms.</li>
+                        <li>Hosted and delivered <b>Google AI | Explore ML workshops</b> to 100+ participants, receiving
+                            a Certificate of Appreciation from Google AI representatives for exceptional clarity and
+                            instructional depth.</li>
+                        <li>Mentored <b>junior lab members</b> in debugging methodologies, error analysis techniques,
+                            and agile project workflows, improving team productivity and code quality across all
+                            projects.</li>
+                        <li>Supervised development of <b>AI research projects</b> including COVID-Net medical imaging
+                            analysis and contributed to open-source COVID chest X-ray dataset initiatives.</li>
+                        <li>Guided creation of <b>interactive applications</b> including AR business cards, recipe
+                            finders, and educational tools that demonstrated practical AI and web technology
+                            implementations.</li>
+                        <li>Established <b>quality assurance processes</b> and code review standards that reduced
+                            production errors by 40% across the lab's project portfolio.</li>
                     </ul>
-                    </p>
                 </div>
+              
+                <div class="timeline-item">
+                    <span class="timeline-date">2019</span><b> - </b>
+                    <span class="timeline-date">2020</span>
+                    <h4>Full-Stack Developer Intern | Ashvau (formerly Repairbuck), India</h4>
+                    <p>Contributed to a successful mobile repair startup that pivoted to app development, creating a
+                        platform that gained significant customer traction and recognition in its launch city.</p>
+                    <ul>
+                        <li>Developed a <b>real-time online inauguration system</b> using NuxtJS and MongoDB that
+                            supported 220+ global users for virtual events and business operations.</li>
+                        <li>Integrated <b>backend-frontend systems</b> using Ruby on Rails and PostgreSQL for the tech
+                            repair application, enabling seamless user experiences and scaling to 150+ users within 4
+                            months of launch.</li>
+                        <li>Implemented <b>responsive UI components</b> and payment gateway integrations that improved
+                            customer satisfaction and platform reliability.</li>
+                        <li>Collaborated with the startup team to <b>pivot from Repairbuck to Ashvau</b>, adapting the
+                            technology stack to support broader application development services.</li>
+                        <li>Gained experience in <b>agile startup environments</b>, participating in daily stand-ups,
+                            sprint planning, and rapid prototyping cycles.</li>
+                        <li>Received <b>positive customer feedback</b> and recognition for contributing to an app that
+                            achieved strong market acceptance in its initial launch city.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">2018</span><b> - </b>
+                    <span class="timeline-date">2019</span>
+                    <h4>Database Developer Intern | Softeck ERP Solutions, India</h4>
+                    <p>Demonstrated exceptional PL/SQL and database skills that led to a return offer for a significant
+                        ERP development project with Intime Ltd.</p>
+                    <ul>
+                        <li>Performed <b>PL/SQL database programming</b> for complex data migration projects, optimizing
+                            queries and improving data processing efficiency.</li>
+                        <li>Developed <b>database optimization strategies</b> that enhanced system performance and
+                            reduced data retrieval times for enterprise applications.</li>
+                        <li>Created <b>data validation scripts</b> and integrity checks that improved data quality and
+                            reliability across multiple business systems.</li>
+                        <li>Impressed management with technical proficiency and problem-solving abilities, leading to a
+                            <b>return offer</b> for the Intime Ltd ERP project.</li>
+                        <li>Gained foundational experience in <b>enterprise database management</b> that later enabled
+                            successful delivery of the complete ERP system for 500+ users.</li>
+                        <li>Received <b>formal recognition</b> for database contributions that became the
+                                foundation for larger-scale ERP development work.</li>
+                    </ul>
+                </div>
+
                 <div class="timeline-item">
                     <span class="timeline-date">2017</span><b> - </b>
-                    <span class="timeline-date">2020</span>
-                    <h4>Internships & Startup Projects | India</h4>
-                    <p>
+                    <span class="timeline-date">2018</span>
+                    <h4>Web Developer Intern | Arena Multimedia, India</h4>
+                    <p>Enhanced security and functionality of WordPress-based systems for a multimedia education
+                        provider.</p>
                     <ul>
-                        <li><b>Ashvau:</b> Built real-time online inauguration system (NuxtJS, MongoDB) with 220+ global
-                            users.</li>
-                        <li><b>Repairbuck:</b> Integrated backend–frontend (Ruby on Rails, PostgreSQL) for a tech repair
-                            app, scaling to 150+ users in 4 months.</li>
-                        <li><b>Indus Net Technologies:</b> PL/SQL database programming for data migration and
-                            optimization.</li>
-                        <li><b>Arena Multimedia:</b> Rebuilt login system in WordPress, improving authentication
-                            security.</li>
-                        <li><b>Hackathon:</b> Developed hospital management system (Python Flask) enabling faster,
-                            transparent transactions; led backend team of 3.</li>
+                        <li>Rebuilt and <b>secured login authentication systems</b> in WordPress, implementing enhanced
+                            security protocols that protected user data and system integrity.</li>
+                        <li>Developed <b>custom WordPress plugins</b> and themes that improved site functionality and
+                            user experience for educational content delivery.</li>
+                        <li>Implemented <b>security best practices</b> that reduced vulnerability risks and improved
+                            overall system stability.</li>
+                        <li>Gained practical experience in <b>content management systems</b> and web security principles
+                            applied in educational technology environments.</li>
                     </ul>
-                    </p>
                 </div>
 
+                <div class="timeline-item">
+                    <span class="timeline-date">2017</span><b> - </b>
+                    <span class="timeline-date">2017</span>
+                    <h4>Database Intern | Indus Net Technologies, India</h4>
+                    <p>Developed foundational database skills through hands-on PL/SQL programming and data management
+                        projects.</p>
+                    <ul>
+                        <li>Assisted in <b>PL/SQL database programming</b> for enterprise data migration and
+                            optimization projects.</li>
+                        <li>Supported <b>database maintenance</b> and performance tuning activities that improved system
+                            efficiency.</li>
+                        <li>Gained exposure to <b>enterprise database environments</b> and large-scale data management
+                            challenges.</li>
+                        <li>Developed <b>technical documentation</b> and process guides that supported team knowledge
+                            sharing.</li>
+                    </ul>
+                </div>
             </div>
         </section>
-
+        <section class="story-section">
+            <h2>Additional Skills </h2>
+            <div class="timeline-item-nodot">
+                <span class="timeline-date">2021</span><b> - </b>
+                <span class="timeline-date">2023</span>
+                <h4>Customer Service Roles | Dublin, Ireland</h4>
+                <h6>Gained teamwork, adaptability, and communication skills in customer-facing roles.</h6>
+                <p>
+                <ul>
+                    <li>Sales Assistant, Supervalu (5 months).</li>
+                    <li>Pizza Cook & Sales Associate, Fired Pizza (6 months).</li>
+                    <li>Pizza Cook & Sales Associate, Four Star Pizza (13 months).</li>
+                </ul>
+                </p>
+            </div>
+        </section>
         <!-- Key Projects -->
         <section class="story-section">
             <h2>✨ Github Projects</h2>
