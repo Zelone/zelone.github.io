@@ -297,23 +297,18 @@
                             processing of sensitive healthcare data.</p>
                         <ul>
                             <li>Engineered a <b>Python-based DICOM processing system</b> using PyDicom that handled
-                                multiple
-                                CT scanner manufacturers (Ingenuity CT, MX 16-slice, SCENARIA) with customized
-                                anonymization
-                                rules for each device type.</li>
+                                multiple OEM (Original Equipment Manufacturers) and models with customized
+                                anonymization rules for each device type.</li>
                             <li>Implemented <b>manufacturer-specific UID randomization algorithms</b> that preserved
                                 referential integrity while ensuring complete patient anonymity across all DICOM
-                                metadata
-                                fields.</li>
+                                metadata fields.</li>
                             <li>Designed <b>automated metadata scrubbing</b> that removed 15+ identifying fields
-                                including
-                                patient demographics, institution details, and technical acquisition parameters while
-                                maintaining diagnostic quality.</li>
+                                including patient demographics, institution details, and technical acquisition 
+                                parameters while maintaining diagnostic quality.</li>
                             <li>Built <b>AWS S3 integration</b> using Boto3 for secure cloud storage and processing of
                                 large-scale medical datasets, handling terabytes of CT imaging data.</li>
                             <li>Created <b>batch processing pipelines</b> that automated the entire anonymization
-                                workflow
-                                from ingestion to cloud storage, reducing manual processing time by 95%.</li>
+                                workflow from ingestion to cloud storage, reducing manual processing time by 95%.</li>
                             <li>Developed <b>quality control mechanisms</b> including checksum validation and metadata
                                 verification to ensure data integrity throughout the anonymization process.</li>
                             <li>Collaborated with medical data specialists to implement HIPAA-compliant anonymization
