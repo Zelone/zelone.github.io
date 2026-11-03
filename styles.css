@@ -487,3 +487,8 @@ a:hover { color: var(--ink); }
 /* Keep grid children from forcing horizontal scroll on narrow screens */
 .hero .wrap > *, .split > *, .projects > *, .work > li > * { min-width: 0; }
 body { overflow-x: hidden; }
+
+/* Projects page: heading without a card, readable Clear button */
+.content-section.welcome-section { background: none; border: 0; padding-left: 0; padding-right: 0; }
+#clearSearch { border: 1px solid var(--line); color: var(--ink); background: var(--surface); border-radius: var(--radius-s); font-weight: 700; }
+#clearSearch:hover { border-color: var(--ink); }

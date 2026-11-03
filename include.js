@@ -12,6 +12,6 @@
             });
         }).catch(function () { });
     }
-    include('nav-placeholder', '/nav.html?v=20261104');
-    include('footer-placeholder', '/footer.html?v=20261104');
+    include('nav-placeholder', '/nav.html?v=20261104b');
+    include('footer-placeholder', '/footer.html?v=20261104b');
 })();
