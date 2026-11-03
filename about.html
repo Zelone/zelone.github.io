@@ -1,98 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About Me - Jitesh Jhawar | Zelone Portfolio</title>
-    <meta name="description" content="Learn more about Jitesh Jhawar (Zelone) - developer, creator, and technology enthusiast. Discover my background and interests.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About | Jitesh Jhawar</title>
+    <meta name="description"
+        content="About Jitesh Jhawar: self-taught developer from India, M.Sc. Data Analytics at DCU, now Lead Developer at Trafasa building AI-first trade and procurement software.">
     <meta name="author" content="Jitesh Jhawar">
-    <meta name="keywords" content="Jitesh Jhawar, about, developer, programmer, biography, skills">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230B7A75%22/><text x=%2250%22 y=%2268%22 font-size=%2252%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22 font-weight=%22700%22>JJ</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .about-body { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; padding-bottom: 24px; }
+        .about-body p { max-width: var(--measure); font-size: 1.125rem; }
+        .about-body h2 { font-size: var(--step-2); margin: 36px 0 10px; }
+        .about-body h2:first-child { margin-top: 0; }
+        .facts { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--teal); }
+        .facts li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+        .facts b { display: block; font-family: var(--font-display); }
+        .facts span { color: var(--ink-soft); }
+        @media (max-width: 860px) { .about-body { grid-template-columns: 1fr; } }
+    </style>
 </head>
 
 <body>
-    <!-- Navigation Placeholder -->
     <div id="nav-placeholder"></div>
 
-    <!-- Main Content -->
     <main class="main-content">
-        <div class="container">
-            <section class="about-hero content-section">
-                <h1>Hi, I'm Jitesh Jhawar</h1>
-                <p>Developer • Creator • Technology Enthusiast</p>
-            </section>
-            
-            <section class="content-section">
-                <div class="about-content">
-                    <h2 class="text-gradient">About Me</h2>
-                    <p>
-                        Welcome to my digital space! I'm passionate about creating innovative solutions 
-                        and exploring the endless possibilities that technology offers. Through my projects 
-                        and repositories, I aim to contribute to the developer community and share knowledge.
-                    </p>
-                    
-                    <h3 class="mt-4">What I Do</h3>
-                    <div class="row mt-3">
-                        <div class="col-md-4 mb-3">
-                            <h5>🚀 Development</h5>
-                            <p>Building modern web applications with clean code and best practices.</p>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <h5>📚 Learning</h5>
-                            <p>Constantly exploring new technologies and staying current with industry trends.</p>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <h5>🌐 Sharing</h5>
-                            <p>Contributing to open source projects and sharing knowledge with the community.</p>
-                        </div>
-                    </div>
-                    
-                    <h3 class="mt-4">Let's Connect</h3>
-                    <p>
-                        I'm always interested in collaborating on exciting projects or discussing new ideas. 
-                        Feel free to explore my repositories and reach out if you'd like to connect!
-                    </p>
-                    
-                    <div class="mt-4">
-                        <a href="repositories.html" class="btn btn-gradient mr-3">View My Projects</a>
-                        <a href="https://github.com/zelone" target="_blank" rel="noopener" class="btn btn-outline-primary">
-                            GitHub Profile
-                        </a>
-                    </div>
+        <header class="page-head">
+            <div class="wrap">
+                <h1>About me</h1>
+                <p>I'm Jitesh Jhawar, also Zelone on GitHub. I'm a self-taught developer who likes taking a product
+                    from a rough requirement all the way to something customers use every day.</p>
+            </div>
+        </header>
+
+        <div class="wrap about-body">
+            <div>
+                <h2>How I got here</h2>
+                <p>I started building software during my B.Tech in Computer Science at SRM in Chennai: a hospital
+                    management system at a hackathon, PL/SQL migrations as a database intern, and full-stack work at an
+                    early-stage startup. After graduating I was the sole developer of an ERP serving a nationwide
+                    company's 500+ employees.</p>
+                <p>I moved to Ireland for an M.Sc. in Data Analytics at Dublin City University, where my thesis was on
+                    summarising financial narratives. I stayed on as a Research Assistant, building a VR classroom
+                    simulation and its data backend for education researchers, while freelancing on medical-imaging
+                    pipelines for Fineax.</p>
+                <p>Today I'm back in Kolkata as Lead Developer at Trafasa, managing the development team behind
+                    Trafasa.ai and Proquro.ai. Most of my time goes into AI-first workflows: agents that answer
+                    supplier questions and triage disputes, running on-prem on open models.</p>
+
+                <h2>How I work</h2>
+                <p>A lot of my work is the unglamorous part that makes software dependable: queues and retries for
+                    large batch jobs, checksum validation on data pipelines, and role-based access control.</p>
+                <p>Outside work I tinker with game engines, Unity, and automation scripts. Some of that is on my <a
+                        href="/repositories.html">projects page</a>.</p>
+
+                <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+                    <a class="button" href="/jobs.html">Read my CV</a>
+                    <a class="button quiet" href="mailto:jiteshjha1997@gmail.com">Email me</a>
                 </div>
-            </section>
+            </div>
+
+            <aside aria-label="Quick facts">
+                <ul class="facts">
+                    <li><b>Now</b><span>Lead Developer, Trafasa Ltd</span></li>
+                    <li><b>Based in</b><span>Kolkata, India</span></li>
+                    <li><b>Education</b><span>M.Sc. Data Analytics, DCU; B.Tech. Computer Science, SRM</span></li>
+                    <li><b>Main tools</b><span>Python, React/Next.js, Frappe, PostgreSQL, Ollama</span></li>
+                    <li><b>Find me</b><span><a href="https://github.com/Zelone">GitHub</a>, <a
+                                href="https://linkedin.com/in/jitesh-jhawar">LinkedIn</a></span></li>
+                </ul>
+            </aside>
         </div>
     </main>
-    <!-- Footer Placeholder -->
-    <div id="footer-placeholder"></div>
-    
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-        crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    
-    <!-- Load Navigation and Footer -->
-    <script>
-        $(document).ready(function() {
-            $("#nav-placeholder").load("/nav.html");
-            $("#footer-placeholder").load("/footer.html");
-        });
-    </script>
 
+    <div id="footer-placeholder"></div>
+    <script src="/include.js"></script>
 </body>
 
 </html>

@@ -3,79 +3,245 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Zelone - Jitesh Jhawar | Portfolio & Projects</title>
-    <meta name="description"
-        content="Welcome to Jitesh Jhawar's portfolio. Explore my projects, repositories, and learn more about my development journey.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jitesh Jhawar | Lead Developer, Full-Stack &amp; AI Engineer</title>
+    <meta name="description"
+        content="Jitesh Jhawar leads the team building AI-first trade and procurement platforms at Trafasa. Full-stack and AI engineer: Python, React/Next.js, on-prem LLM agents, RAG and data pipelines.">
     <meta name="author" content="Jitesh Jhawar">
-    <meta name="keywords" content="Jitesh Jhawar, Zelone, developer, portfolio, projects, GitHub, programming">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <meta property="og:title" content="Jitesh Jhawar | Lead Developer, Full-Stack & AI Engineer">
+    <meta property="og:description" content="AI-first trade and procurement platforms, on-prem LLM agents, and full-stack products from requirements to production.">
+    <meta property="og:url" content="https://zelone.github.io/">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230B7A75%22/><text x=%2250%22 y=%2268%22 font-size=%2252%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22 font-weight=%22700%22>JJ</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
-    <!-- Navigation Placeholder -->
     <div id="nav-placeholder"></div>
 
-    <!-- Main Content -->
     <main class="main-content">
-        <section class="welcome-section content-section">
-            <div class="container">
-                <h1>Welcome to My World</h1>
-                <p>Explore my projects, discover my journey, and get to know me better.</p>
-                <div class="mt-4">
-                    <a href="repositories.html" class="btn btn-gradient mr-3">View Projects</a>
-                    <a href="about.html" class="btn btn-outline-light">About Me</a>
+        <section class="hero">
+            <div class="wrap">
+                <div>
+                    <h1>I lead the team building AI-first trade and procurement software.</h1>
+                    <p class="intro">Lead Developer at Trafasa. I take products from requirements to production in
+                        Python and React, and ship LLM agents that run on-prem with Llama 3.2.</p>
+                    <div class="actions">
+                        <a class="button" href="#work">See my work</a>
+                        <a class="button quiet" href="/Jitesh_Jhawar_CV.pdf" download>Download CV (PDF)</a>
+                    </div>
+                    <p class="whereabouts">Based in Kolkata, India. Previously Research Assistant at Dublin City
+                        University.</p>
+                </div>
+
+                <figure class="console" aria-label="Illustration of a supplier conversation handled by an AI agent">
+                    <div class="console-head">
+                        <span>Supplier desk</span>
+                        <span class="status">Agent on duty</span>
+                    </div>
+                    <div class="console-body">
+                        <div class="msg supplier"><span class="who">Supplier</span>Our invoice for PO-2318 was
+                            short-paid. Can you check what happened?</div>
+                        <div class="msg agent"><span class="who">Trafasa agent</span>I matched PO-2318 against the
+                            goods receipt: 40 units were received and 45 were invoiced. That accounts for the
+                            difference.</div>
+                        <div class="msg agent"><span class="who">Trafasa agent</span>I've attached the receipt and opened
+                            a dispute for the 5 missing units.</div>
+                        <div class="msg route">Dispute opened and sent to the procurement team</div>
+                    </div>
+                    <figcaption class="console-foot">Illustration of the supplier-query and dispute-triage agent I
+                        shipped at Trafasa, running Llama 3.2 on-prem via Ollama.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="band" aria-labelledby="impact-title">
+            <div class="wrap">
+                <h2 id="impact-title" class="sr-only">Impact</h2>
+                <div class="proof">
+                    <p><strong>~2,000 customers</strong>use Trafasa.ai and Proquro.ai, the trade and procurement
+                        platforms my team builds, with key workflows ~40% faster.</p>
+                    <p><strong>95% less manual work</strong>after I automated ingestion-to-S3 with checksum
+                        validation for Fineax's MRI and CT anonymisation pipeline.</p>
+                    <p><strong>~200 staff hours saved a week</strong>by the ERP I built single-handedly at Softech
+                        for Intime Ltd's 500+ employees.</p>
                 </div>
             </div>
         </section>
 
-        <div class="container">
-            <section class="content-section">
-                <h2 class="text-gradient">What I Do</h2>
-                <div class="row mt-4">
-                    <div class="col-md-6">
-                        <h5>🚀 Full Stack Development</h5>
-                        <p>Building modern web applications with the latest technologies and best practices.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>💻 Open Source</h5>
-                        <p>Contributing to the developer community through open source projects and repositories.</p>
-                    </div>
+        <section class="band" id="work" aria-labelledby="work-title">
+            <div class="wrap">
+                <h2 id="work-title">Work</h2>
+                <p class="lede">Startups, a research lab and enterprise software, from 2018 internships to leading a
+                    team today.</p>
+                <ol class="work" reversed>
+                    <li>
+                        <div class="when">Dec 2025 – now</div>
+                        <div>
+                            <h3>Lead Developer</h3>
+                            <p class="org">Trafasa Ltd</p>
+                            <ul>
+                                <li>Manage the development team and own delivery of Trafasa.ai and Proquro.ai.</li>
+                                <li>Shipped a customer-facing AI agent for supplier queries and dispute triage, running
+                                    Llama 3.2 (3B/7B) on-prem via Ollama.</li>
+                                <li>Built configurable per-customer workflows, plus background workers and queues for
+                                    large-scale requirement handling.</li>
+                            </ul>
+                            <p class="stack">Frappe (Python), Next.js/React, PostgreSQL, CI/CD, monitoring, RBAC</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="when">Sep 2021 – Nov 2025</div>
+                        <div>
+                            <h3>Freelance Developer</h3>
+                            <p class="org">Fineax LLC</p>
+                            <ul>
+                                <li>Built a Python/PyDicom pipeline that anonymises MRI and CT data across
+                                    manufacturers, scrubbing 15+ identifying fields while keeping UIDs consistent.</li>
+                                <li>Automated ingestion-to-S3 batch processing with Boto3 and checksum validation,
+                                    cutting manual effort by 95%.</li>
+                            </ul>
+                            <p class="stack">Python, PyDicom, AWS S3, Boto3</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="when">Mar 2023 – Jul 2025</div>
+                        <div>
+                            <h3>Research Assistant</h3>
+                            <p class="org">Dublin City University, Ireland</p>
+                            <ul>
+                                <li>Built a Unity VR classroom simulation for education research with Dr. Enda Donlon
+                                    and Dr. Peter Tiernan.</li>
+                                <li>Developed a Flask backend with 40+ REST endpoints capturing location, image, audio
+                                    and interaction data, plus a heatmap analytics dashboard.</li>
+                            </ul>
+                            <p class="stack">Unity VR, Python, Flask</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="when">Jan – Aug 2021</div>
+                        <div>
+                            <h3>Software Developer</h3>
+                            <p class="org">Softech ERP Solutions, India</p>
+                            <ul>
+                                <li>Sole developer of an ERP for Intime Ltd, serving 500+ employees nationwide.</li>
+                                <li>Optimised schemas for 20GB+ of weekly transactions and automated data entry.</li>
+                            </ul>
+                            <p class="stack">PHP, MySQL</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="when">2018 – 2021</div>
+                        <div>
+                            <h3>Internships and lab work</h3>
+                            <p class="org">Ashvau (Repairbuck), Softech ERP, CARL at SRM</p>
+                            <ul>
+                                <li>Real-time online inauguration system for 220+ global users (NuxtJS, MongoDB), and a
+                                    Rails repair app that reached 150+ users in four months.</li>
+                                <li>Ran Google AI Explore ML workshops for 100+ participants and mentored junior lab
+                                    members across 10+ projects.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+                <a class="more-link" href="/jobs.html">Read the full CV</a>
+            </div>
+        </section>
+
+        <section class="band" id="projects" aria-labelledby="projects-title">
+            <div class="wrap">
+                <h2 id="projects-title">Projects</h2>
+                <p class="lede">Things I've built outside the day job, and experiments that fed into it.</p>
+                <div class="projects">
+                    <article class="project lead">
+                        <h3>frappe-camunda</h3>
+                        <p>An integration between Frappe 15, the Python framework behind Trafasa's platforms, and the
+                            Camunda 8 workflow engine.</p>
+                        <p class="meta"><span class="tag">Python</span><span class="tag">Frappe</span><span
+                                class="tag">Camunda 8</span> Private repository</p>
+                    </article>
+                    <article class="project">
+                        <h3>django-react-demo</h3>
+                        <p>A Django and React app with a Jenkins pipeline deploying to Kubernetes.</p>
+                        <p class="meta"><span class="tag">Python</span><span class="tag">Kubernetes</span> <a
+                                href="https://github.com/Zelone/django-react-demo">View on GitHub</a></p>
+                    </article>
+                    <article class="project">
+                        <h3>GameEngine</h3>
+                        <p>A custom 2D/3D game engine prototype written from scratch in Java.</p>
+                        <p class="meta"><span class="tag">Java</span> <a
+                                href="https://github.com/Zelone/GameEngine">View on GitHub</a></p>
+                    </article>
+                    <article class="project">
+                        <h3>Bus Availability PWA</h3>
+                        <p>A static progressive web app for a bus company, with search across bus types, routes and
+                            timings.</p>
+                        <p class="meta"><span class="tag">PWA</span><span class="tag">JavaScript</span> <a
+                                href="https://github.com/Zelone/Bus-Availability-ProgressiveWebApp">View on GitHub</a>
+                        </p>
+                    </article>
+                    <article class="project">
+                        <h3>ZBulkEmail</h3>
+                        <p>A Java bulk email sender built at the CARL lab, designed to keep messages out of spam.</p>
+                        <p class="meta"><span class="tag">Java</span> <a
+                                href="https://github.com/Zelone/ZBulkEmail">View on GitHub</a></p>
+                    </article>
                 </div>
-            </section>
-        </div>
+                <a class="more-link" href="/repositories.html">Browse all repositories</a>
+            </div>
+        </section>
+
+        <section class="band" aria-labelledby="skills-title">
+            <div class="wrap">
+                <h2 id="skills-title">Skills</h2>
+                <p class="lede">What I reach for, grouped by the job it does.</p>
+                <dl class="skills">
+                    <dt>AI and LLMs</dt>
+                    <dd>LLM applications, RAG with hybrid search, vector databases, AI agents, LangChain, Ollama, Llama
+                        3.2, transformer models</dd>
+                    <dt>Backend</dt>
+                    <dd>Python, Frappe/ERPNext, Flask, Node.js, REST APIs, Java, PHP, Ruby on Rails</dd>
+                    <dt>Frontend</dt>
+                    <dd>JavaScript, TypeScript, React, Next.js, NuxtJS</dd>
+                    <dt>Data</dt>
+                    <dd>PostgreSQL, MySQL, MongoDB, Oracle PL/SQL, data pipelines</dd>
+                    <dt>Cloud and delivery</dt>
+                    <dd>AWS (S3, Boto3), Kubernetes, ArgoCD, Jenkins, Camunda, CI/CD</dd>
+                </dl>
+            </div>
+        </section>
+
+        <section class="band" id="contact">
+            <div class="wrap split">
+                <div>
+                    <h2>Education</h2>
+                    <ul class="edu">
+                        <li><b>M.Sc. Data Analytics</b><span>Dublin City University, 2021–2023. Thesis on financial
+                                narrative summarisation.</span></li>
+                        <li><b>B.Tech. Computer Science</b><span>SRM Institute of Science and Technology, Chennai,
+                                2016–2020. Thesis on cloud hack detection with machine learning.</span></li>
+                    </ul>
+                </div>
+                <div class="contact">
+                    <h2>Get in touch</h2>
+                    <p>Email is the quickest way to reach me.</p>
+                    <ul>
+                        <li><a href="mailto:jiteshjha1997@gmail.com">jiteshjha1997@gmail.com</a></li>
+                        <li><a href="https://linkedin.com/in/jitesh-jhawar" target="_blank" rel="noopener">LinkedIn</a>
+                        </li>
+                        <li><a href="https://github.com/Zelone" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="/Jitesh_Jhawar_CV.pdf" download>CV (PDF)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
-    <!-- Footer Placeholder -->
+
     <div id="footer-placeholder"></div>
-
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-        crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-
-    <!-- Load Navigation and Footer -->
-    <script>
-        $(document).ready(function () {
-            $("#nav-placeholder").load("/nav.html");
-            $("#footer-placeholder").load("/footer.html");
-        });
-    </script>
-
+    <script src="/include.js"></script>
 </body>
 
 </html>
