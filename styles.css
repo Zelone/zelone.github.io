@@ -56,6 +56,7 @@
 }
 
 /* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
@@ -76,6 +77,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.01em;
 }
 
+img { max-width: 100%; height: auto; }
 a { color: var(--teal); }
 a:hover { color: var(--ink); }
 :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
@@ -90,6 +92,13 @@ a:hover { color: var(--ink); }
 }
 
 .main-content { min-height: 60vh; }
+
+/* Bootstrap .container on older pages: line up with .wrap and the nav */
+.container {
+    max-width: 1120px;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+}
 
 /* ---------- Navigation ---------- */
 .site-nav {
@@ -374,6 +383,13 @@ a:hover { color: var(--ink); }
     box-shadow: none;
 }
 .content-section:hover { transform: none; box-shadow: none; }
+.content-section.welcome-section {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    padding: clamp(40px, 7vw, 80px) 0 24px;
+    margin: 0;
+}
 .story-section h2 { font-size: var(--step-3); font-weight: 800; margin-bottom: 14px; }
 .story-section h3 { font-size: var(--step-2); }
 .story-section h4 { font-size: var(--step-1); }
@@ -432,6 +448,8 @@ a:hover { color: var(--ink); }
     font: inherit;
 }
 .search-input:focus { outline: 3px solid var(--teal-soft); border-color: var(--teal); }
+.search-form .btn-outline-secondary { margin-left: 0 !important; border-color: var(--line); color: var(--ink-soft); background: transparent; font-weight: 700; }
+.search-form .btn-outline-secondary:hover { border-color: var(--ink); color: var(--ink); background: transparent; }
 .search-btn { padding: 10px 18px; border-radius: var(--radius-s); border: 2px solid var(--teal); background: var(--teal); color: #fff; font-weight: 700; }
 .search-results { color: var(--ink-soft); font-size: var(--step--1); margin-top: 8px; }
 
@@ -486,9 +504,3 @@ a:hover { color: var(--ink); }
 
 /* Keep grid children from forcing horizontal scroll on narrow screens */
 .hero .wrap > *, .split > *, .projects > *, .work > li > * { min-width: 0; }
-body { overflow-x: hidden; }
-
-/* Projects page: heading without a card, readable Clear button */
-.content-section.welcome-section { background: none; border: 0; padding-left: 0; padding-right: 0; }
-#clearSearch { border: 1px solid var(--line); color: var(--ink); background: var(--surface); border-radius: var(--radius-s); font-weight: 700; }
-#clearSearch:hover { border-color: var(--ink); }
